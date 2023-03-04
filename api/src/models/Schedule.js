@@ -1,36 +1,25 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const Peluquero = sequelize.define(
-    "Peluquero",
+  sequelize.define(
+    "Schedule",
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      nombre: {
+      hour: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      apellido: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      fechaInicio: {
-        type: DataTypes.DATEONLY,
-        allowNull: false,
-      },
-      activo: {
+      reserved: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
         defaultValue: false,
       },
     },
     {
-      timestamps: true,
+      timestamps: false,
     }
   );
-
-  return Peluquero;
 };

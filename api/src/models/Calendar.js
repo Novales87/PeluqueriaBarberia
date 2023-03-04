@@ -1,10 +1,15 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const Calendario = sequelize.define(
-    "calendario",
+  sequelize.define(
+    "Calendar",
     {
-      fecha: {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      date: {
         type: DataTypes.DATEONLY,
         allowNull: false,
         primaryKey: true,
@@ -20,13 +25,4 @@ module.exports = (sequelize) => {
       freezeTableName: true,
     }
   );
-
-  // Generar las fechas y guardarlas en la base de datos
-  Calendario.sync().then(() => {
-    generarFechas().forEach((fecha) => {
-      Calendario.findOrCreate({ where: { fecha: fecha } });
-    });
-  });
-
-  return Calendario;
 };
