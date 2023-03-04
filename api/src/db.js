@@ -5,7 +5,7 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/barberia`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/barberShop`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -37,12 +37,17 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Horarios, Calendario } = sequelize.models;
+const { Calendar, Schedule, Barber } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 // Relación entre Calendario y Horarios (uno a uno)
+Calendar.hasOne(Schedule, { foreignKey: "calendarId" });
+Schedule.belongsTo(Calendar, { foreignKey: "calendarId" });
 
+// Relación entre Horarios y Peluquero (uno a uno)
+Schedule.hasOne(Barber, { foreignKey: "scheduleId" });
+Barber.belongsTo(Schedule, { foreignKey: "scheduleId" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
