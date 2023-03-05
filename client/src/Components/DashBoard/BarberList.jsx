@@ -1,26 +1,40 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchBarbers } from "../../Store/fetchBarbersSlice";
 
 function BarberList() {
-  const [barbers, setBarbers] = useState([]);
+  const barbers = useSelector((state) => state.fetchBarbers.barbers);
+  const status = useSelector((state) => state.barbers.status);
+  const error = useSelector((state) => state.barbers.error);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetchBarbers() {
-      const response = await fetch("http://localhost:3001/api/barbers");
-      const data = await response.json();
-      setBarbers(data.data);
-    }
-    fetchBarbers();
-  }, []);
+    dispatch(fetchBarbers());
+  }, [dispatch]);
+
+  if (status === "loading") {
+    return <div>Cargando...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>
-      {barbers.map((barber) => (
-        <p key={barber.id}>
-          Name: {barber.name} {barber.lastName} <br />
-          Start Date: {barber.startDate} <br />
-          Active: {barber.active.toString()}
-        </p>
-      ))}
+      {!!barbers && barbers.length > 0 ? (
+        barbers.map((barber) => (
+          <div key={barber.id}>
+            <h4>{barber.name}</h4>
+            <p>{barber.lastName}</p>
+            <p>{barber.startDate}</p>
+            <p>{barber.active ? "Activo" : "Inactivo"}</p>
+          </div>
+        ))
+      ) : (
+        <div>No hay barberos disponibles</div>
+      )}
     </div>
   );
 }
