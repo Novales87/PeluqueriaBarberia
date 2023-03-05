@@ -108,7 +108,7 @@ async function getBarberById(req, res) {
 async function getBarberByNameAndLastName(req, res) {
   try {
     const { name, lastName } = req.query;
-    const barber = await sequelize.models.Barber.findOne({
+    const barber = await Barber.findOne({
       where: { name, lastName },
     });
     if (!barber) {
