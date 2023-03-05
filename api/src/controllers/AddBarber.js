@@ -1,11 +1,9 @@
 const { Barber } = require("../db.js");
 
-// Controlador para crear un nuevo barbero
-
 async function createBarber(req, res) {
   try {
     const { name, lastName, startDate, active } = req.body;
-
+    console.log(name, lastName, startDate, active);
     // Buscar si ya existe un barbero con el mismo nombre
 
     const existingBarber = await Barber.findOne({
@@ -93,9 +91,39 @@ async function getAllBarbers(req, res) {
   }
 }
 
+async function getBarberById(req, res) {
+  try {
+    const { id } = req.params;
+    const barber = await sequelize.models.Barber.findByPk(id);
+    if (!barber) {
+      return res.status(404).json({ message: "Barber not found" });
+    }
+    res.json(barber);
+  } catch (error) {
+    res.status(500).json({ message: "Error", error });
+  }
+}
+
+async function getBarberByNameAndLastName(req, res) {
+  try {
+    const { name, lastName } = req.query;
+    const barber = await sequelize.models.Barber.findOne({
+      where: { name, lastName },
+    });
+    if (!barber) {
+      return res.status(404).json({ message: "Barber not found" });
+    }
+    res.json(barber);
+  } catch (error) {
+    res.status(500).json({ message: "Error", error });
+  }
+}
+
 module.exports = {
   createBarber,
   deleteBarber,
   updateBarber,
   getAllBarbers,
+  getBarberById,
+  getBarberByNameAndLastName,
 };
