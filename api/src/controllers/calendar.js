@@ -23,6 +23,7 @@ const createCalendar = async() => {
           }
         }
     //Create calendar (30 days from now)
+    
     const dates = [];
     const actuallyDate = new Date();
     for (let i = 0; i < 30; i++) {
