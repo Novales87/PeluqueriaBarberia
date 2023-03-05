@@ -3,7 +3,6 @@ const { Barber } = require("../db.js");
 async function createBarber(req, res) {
   try {
     const { name, lastName, startDate, active } = req.body;
-    console.log(name, lastName, startDate, active);
     // Buscar si ya existe un barbero con el mismo nombre
 
     const existingBarber = await Barber.findOne({
@@ -56,8 +55,9 @@ async function deleteBarber(req, res) {
 
 async function updateBarber(req, res) {
   try {
-    const { id } = req.params;
-    const { name, lastName, startDate, active } = req.body;
+    // const { id } = req.params;
+    const { id, name, lastName, startDate, active } = req.body;
+    console.log(id, name, lastName, startDate, active);
 
     // Buscar el barbero por ID
     const barber = await Barber.findOne({ where: { id } });
@@ -94,7 +94,8 @@ async function getAllBarbers(req, res) {
 async function getBarberById(req, res) {
   try {
     const { id } = req.params;
-    const barber = await sequelize.models.Barber.findByPk(id);
+    console.log(id);
+    const barber = await Barber.findByPk(id);
     if (!barber) {
       return res.status(404).json({ message: "Barber not found" });
     }
