@@ -1,23 +1,18 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes} = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
     "Calendar",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false
       },
       date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull: false,
-        primaryKey: true,
-      },
-      full: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
       },
     },
     {
