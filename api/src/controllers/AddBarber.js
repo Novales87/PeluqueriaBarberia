@@ -6,7 +6,7 @@ async function createBarber(req, res) {
   try {
     const { name, lastName, startDate, active } = req.body;
 
-    // Buscar si ya existe un barbero con el mismo nombre y apellido
+    // Buscar si ya existe un barbero con el mismo nombre
 
     const existingBarber = await Barber.findOne({
       where: { name, lastName },
