@@ -1,10 +1,43 @@
 const { Barber } = require("../db.js");
 
+// async function createBarber(req, res) {
+//   try {
+//     const { name, lastName, startDate, active } = req.body;
+//     // Buscar si ya existe un barbero con el mismo nombre
+
+//     const existingBarber = await Barber.findOne({
+//       where: { name, lastName },
+//     });
+
+//     if (existingBarber) {
+//       return res.status(409).json({ message: "Barber already exists" });
+//     }
+
+//     // Crear un nuevo barbero
+
+//     const newBarber = await Barber.create({
+//       name,
+//       lastName,
+//       startDate,
+//       active,
+//     });
+
+//     res.json({ message: "Barber created successfully", data: newBarber });
+//   } catch (error) {
+//     res.status(500).json({ message: "Error", error });
+//   }
+// }
+
 async function createBarber(req, res) {
   try {
     const { name, lastName, startDate, active } = req.body;
-    // Buscar si ya existe un barbero con el mismo nombre
 
+    // Validar campos vacíos
+    if (!name || !lastName || !startDate) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    // Buscar si ya existe un barbero con el mismo nombre
     const existingBarber = await Barber.findOne({
       where: { name, lastName },
     });
@@ -14,7 +47,6 @@ async function createBarber(req, res) {
     }
 
     // Crear un nuevo barbero
-
     const newBarber = await Barber.create({
       name,
       lastName,
