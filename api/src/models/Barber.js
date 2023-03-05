@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       startDate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       active: {
