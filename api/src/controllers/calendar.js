@@ -1,9 +1,9 @@
 const {Calendar} = require ('../db');
 
-const createCalendar = async() => {
+const createCalendar = async(start,final) => {
     //Create Schedule 
-        let horaInicio = "9:00"
-        let horaFinal = "21:00"
+        let horaInicio = start
+        let horaFinal = final
         const franjaHoraria = [];
         const horaInicioParts = horaInicio.split(':');
         const horaFinalParts = horaFinal.split(':');
@@ -23,7 +23,7 @@ const createCalendar = async() => {
           }
         }
     //Create calendar (30 days from now)
-    
+
     const dates = [];
     const actuallyDate = new Date();
     for (let i = 0; i < 30; i++) {
