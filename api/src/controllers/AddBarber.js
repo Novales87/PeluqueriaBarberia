@@ -1,33 +1,5 @@
 const { Barber } = require("../db.js");
 
-// async function createBarber(req, res) {
-//   try {
-//     const { name, lastName, startDate, active } = req.body;
-//     // Buscar si ya existe un barbero con el mismo nombre
-
-//     const existingBarber = await Barber.findOne({
-//       where: { name, lastName },
-//     });
-
-//     if (existingBarber) {
-//       return res.status(409).json({ message: "Barber already exists" });
-//     }
-
-//     // Crear un nuevo barbero
-
-//     const newBarber = await Barber.create({
-//       name,
-//       lastName,
-//       startDate,
-//       active,
-//     });
-
-//     res.json({ message: "Barber created successfully", data: newBarber });
-//   } catch (error) {
-//     res.status(500).json({ message: "Error", error });
-//   }
-// }
-
 async function createBarber(req, res) {
   try {
     const { name, lastName, startDate, active } = req.body;
@@ -83,12 +55,10 @@ async function deleteBarber(req, res) {
   }
 }
 
-// Controlador para actualizar un barbero por ID
-
 async function updateBarber(req, res) {
   try {
-    // const { id } = req.params;
-    const { id, name, lastName, startDate, active } = req.body;
+    const { id } = req.params;
+    const { name, lastName, startDate, active } = req.body;
     console.log(id, name, lastName, startDate, active);
 
     // Buscar el barbero por ID
@@ -97,6 +67,19 @@ async function updateBarber(req, res) {
     // Verificar si el barbero existe
     if (!barber) {
       return res.status(404).json({ message: "Barber not found" });
+    }
+
+    // Verificar si los datos enviados son iguales a los existentes
+    if (
+      name === barber.name &&
+      lastName === barber.lastName &&
+      startDate === barber.startDate &&
+      active === barber.active
+    ) {
+      return res.status(200).json({
+        message: "No se realizaron cambios",
+        data: barber,
+      });
     }
 
     // Actualizar los datos del barbero
