@@ -3,6 +3,7 @@ import barbersReducer from "./barberSlice";
 import fetchBarbersSlice from "./fetchBarbersSlice";
 import fetchBarberByIdSlice from "./fetchBarberByIdSlice";
 import updateBarberReducer from "./updateBarberSlice";
+import deleteBarberSlice from "./deleteBarberSlice";
 const store = configureStore({
   reducer: {
     // aquí van tus reducers
@@ -10,6 +11,7 @@ const store = configureStore({
     fetchBarbers: fetchBarbersSlice,
     fetchBarberById: fetchBarberByIdSlice,
     updateBarber: updateBarberReducer,
+    deleteBarber: deleteBarberSlice,
   },
 });
 

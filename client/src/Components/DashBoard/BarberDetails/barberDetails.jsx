@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { fetchBarberById } from "../../Store/fetchBarberByIdSlice";
-import Loading from "../Loading/Loading";
-import BarberCard from "../DashBoard/BarberCard/BarberCard";
+import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
+import Loading from "../../Loading/Loading";
+import BarberCard from "../BarberCard/BarberCard";
 
 function BarberDetails() {
   const { id } = useParams();
