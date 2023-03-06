@@ -1,0 +1,47 @@
+.barberUpBox{
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    border: 4px solid rgba(0, 0, 0, 0.253);
+    height: 550px;
+    width: 350px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    
+}
+
+.barberUpBox img {
+    position: relative;
+    width: 50%;
+    margin-bottom: 10%;
+}
+
+.barberUpBox2{
+    border-radius: 5px;
+    width: 85%;
+    text-align: center;
+    text-align: center;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.244); 
+    justify-content: center; 
+    margin-bottom: 10%;
+}
+.barberUpBox2 input {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.barberUpBox2 button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.barberUpBox label {
+ margin-left: 10px;
+ margin-right: 5px;
+}

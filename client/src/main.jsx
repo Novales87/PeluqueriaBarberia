@@ -9,7 +9,8 @@ import BarberList from "./Components/DashBoard/BarberList";
 import BarberDetails from "./Components/DashBoard/barberDetails";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Components/Home/Home";
-import BarberUpdateForm from "./Components/DashBoard/BarberUpdate";
+import BarberUpdateForm from "./Components/DashBoard/BarberUpdate/BarberUpdate";
+import Loading from "./Components/Loading/Loading";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/update/:id",
     element: <BarberUpdateForm />,
+  },
+  {
+    path: "/loading",
+    element: <Loading />,
   },
 ]);
 

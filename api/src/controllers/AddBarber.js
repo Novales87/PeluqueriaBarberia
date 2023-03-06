@@ -95,6 +95,53 @@ async function updateBarber(req, res) {
   }
 }
 
+// async function updateBarber(req, res) {
+//   try {
+//     const { id } = req.params;
+//     const { name, lastName, startDate, active } = req.body;
+//     console.log(id, name, lastName, startDate, active);
+
+//     // Buscar el barbero por ID
+//     const barber = await Barber.findOne({ where: { id } });
+
+//     // Verificar si el barbero existe
+//     if (!barber) {
+//       return res.status(404).json({ message: "Barber not found" });
+//     }
+
+//     // Verificar si los datos enviados son iguales a los existentes
+//     if (
+//       name === barber.name &&
+//       lastName === barber.lastName &&
+//       startDate === barber.startDate &&
+//       active === barber.active
+//     ) {
+//       return res.status(200).json({
+//         message: "No se realizaron cambios",
+//         data: barber,
+//       });
+//     }
+
+//     // Verificar si hay campos vacíos
+//     if (!name || !lastName || !startDate || !active) {
+//       return res
+//         .status(400)
+//         .json({ message: "Todos los campos son requeridos" });
+//     }
+
+//     // Actualizar los datos del barbero
+//     barber.name = name;
+//     barber.lastName = lastName;
+//     barber.startDate = startDate;
+//     barber.active = active;
+//     await barber.save();
+
+//     res.json({ message: "Barber updated successfully", data: barber });
+//   } catch (error) {
+//     res.status(500).json({ message: "Error", error });
+//   }
+// }
+
 // Controlador para obtener todos los barberos
 
 async function getAllBarbers(req, res) {
