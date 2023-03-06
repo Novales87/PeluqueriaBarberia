@@ -30,7 +30,7 @@ function BarberList() {
         barbers.map((barber) => (
           <div key={barber.id}>
             <h4>{barber.name}</h4>
-            <p>{barber.lastName}</p>
+            <h4>{barber.lastName}</h4>
 
             <Link to={`/dashboard/detail/${barber.id}`}>
               <button>Detalle</button>
