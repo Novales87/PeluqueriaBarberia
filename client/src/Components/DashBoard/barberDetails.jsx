@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchBarberById } from "../../Store/fetchBarberByIdSlice";
+import Loading from "../Loading/Loading";
+import BarberCard from "../DashBoard/BarberCard/BarberCard";
 
 function BarberDetails() {
   const { id } = useParams();
@@ -15,7 +17,7 @@ function BarberDetails() {
   }, [dispatch, id]);
 
   if (status === "loading") {
-    return <div>Cargando...</div>;
+    return <Loading />;
   }
 
   if (status === "failed") {
@@ -26,14 +28,7 @@ function BarberDetails() {
     <div>
       {barber && (
         <>
-          <h3>{barber.name}</h3>
-          <p>{barber.lastName}</p>
-          <p>{barber.startDate}</p>
-          <p>{barber.active ? "Activo" : "Inactivo"}</p>
-          <button>eliminar</button>
-          <Link to={`/dashboard/update/${barber.id}`}>
-            <button>editar</button>
-          </Link>
+          <BarberCard barber={barber} />
         </>
       )}
     </div>

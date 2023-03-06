@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBarbers } from "../../Store/fetchBarbersSlice";
-
-// import { fetchBarberById } from "../../Store/fetchBarberByIdSlice";
+import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 
 function BarberList() {
@@ -18,7 +17,7 @@ function BarberList() {
   }, [dispatch]);
 
   if (status === "loading") {
-    return <div>Cargando...</div>;
+    return <Loading />;
   }
 
   if (status === "failed") {
