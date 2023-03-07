@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CardBarber({ barber, logo, handleDelete }) {
   return (
     <div style={{ marginTop: "10px" }}>
-      <div className="card" style={{ width: "20rem" }}>
+      <div className="card" style={{ width: "28rem" }}>
         <img
           src={logo}
           className="rounded float-start img-fluid "
