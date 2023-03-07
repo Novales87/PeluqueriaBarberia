@@ -28,7 +28,7 @@ function BarberDetails() {
     <div>
       {barber && (
         <>
-          <BarberCard barber={barber} />
+          <BarberCard barber={barber} style={{ marginTop: "50px" }} />
         </>
       )}
     </div>
