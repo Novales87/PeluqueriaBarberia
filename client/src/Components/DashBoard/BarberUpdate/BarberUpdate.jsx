@@ -5,7 +5,7 @@ import { updateBarber } from "../../../Store/updateBarberSlice";
 import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
 import Loading from "../../Loading/Loading";
 import "./BarberUpdate.css";
-import barba from "../../../images/barba.png";
+import logo3 from "../../../images/Logo3.png";
 import logo from "../../../images/logo.jpeg";
 
 function BarberUpdate() {
@@ -53,7 +53,7 @@ function BarberUpdate() {
 
   return (
     <div className="barberUpBox">
-      <img src={logo} />
+      <img src={logo3} />
       {status === "loading" ? (
         <Loading />
       ) : status === "failed" ? (

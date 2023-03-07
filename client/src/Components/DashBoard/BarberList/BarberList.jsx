@@ -6,6 +6,7 @@ import "./BarberList.css";
 import Navbar from "../Nav/Nav";
 import CardBarberList from "./CardBarberList";
 import logo from "../../../images/logo.jpeg";
+import logo3 from "../../../images/Logo3.png";
 
 function BarberList() {
   const barbers = useSelector((state) => state.fetchBarbers.barbers);
@@ -33,7 +34,7 @@ function BarberList() {
       {!!barbers && barbers.length > 0 ? (
         barbers.map((barber) => (
           <div key={barber.id}>
-            <CardBarberList barber={barber} logo={logo} />
+            <CardBarberList barber={barber} logo={logo3} />
           </div>
         ))
       ) : (

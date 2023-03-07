@@ -1,15 +1,12 @@
 import React from "react";
 import logo from "../../../images/logo.jpeg";
+import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav className="navbar  navbar-expand-sm navbar-dark bg-dark  ">
-      <img
-        src={logo}
-        className="rounded float-start "
-        style={{ width: "140px", padding: "5px", height: "80px" }}
-      />
+      <img src={logo} className="img-fluid" style={{ width: "100px" }} />
       <div className="container-fluid">
-        <a className="navbar-brand" href="#"></a>
+        <Link className="navbar-brand" href="#"></Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,24 +21,31 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" href="#">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+              <Link className="nav-link" to={`/dashboard/addbarber`}>
+                Crear Barbero
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+              <Link className="nav-link" to={`/dashboard/barbers`}>
+                Lista de Barberos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={`/dashboard/barbers`}>
+                Crear Productos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={`/dashboard/barbers`}>
+                Productos
+              </Link>
             </li>
           </ul>
-          <span className="navbar-text">
-            Navbar text with an inline element
-          </span>
         </div>
       </div>
     </nav>
