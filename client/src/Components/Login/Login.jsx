@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -20,9 +21,18 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      style={{ display: "flex", flexDirection: "column", alignItems: "Center" }}
+      onSubmit={handleSubmit}
+    >
       <div>
+        <h1>Please sig in</h1>
+      </div>
+      <div>
+        <div>
+
         <label htmlFor="email"> Correo Electrónico: </label>
+        </div>
         <input
           type="text"
           id="email"
@@ -32,8 +42,11 @@ function Login() {
           required
         />
       </div>
+
       <div>
-        <label htmlFor="password"> Contraseña: </label>
+        <div>
+          <label htmlFor="password"> Contraseña: </label>
+        </div>
         <input
           type="password"
           id="password"
@@ -43,11 +56,14 @@ function Login() {
           required
         />
       </div>
-      
+
       <div className="d-grid gap-2 col-6 mx-auto">
         <button className="btn btn-primary" type="submit">
           Sign In
         </button>
+      </div>
+      <div>
+        <h4>© 2022-2023</h4>
       </div>
     </form>
   );
