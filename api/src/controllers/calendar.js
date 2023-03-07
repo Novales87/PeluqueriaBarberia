@@ -1,6 +1,8 @@
-const {Calendar} = require ('../db');
+const {Barber,Calendar} = require ('../db');
 
-const createCalendar = async(start,final) => {
+const createCalendar = async(id,start,final) => {
+        const barberFound = await Barber.findByPk(id);
+        console.log(barberFound)
     //Create Schedule 
         let horaInicio = start
         let horaFinal = final
@@ -36,11 +38,13 @@ const createCalendar = async(start,final) => {
       dates.push(day);
     }
     
-    const newCalendar = await Calendar.create({
+    let newCalendar = await Calendar.create({
        date : dates 
     })
 
-    return newCalendar;
+    await barberFound.addCalendar(newCalendar)
+
+    return newCalendar
 }
 const getCalendar = async(id) => {
     let foundCalendar =  await Calendar.findByPk(id)
