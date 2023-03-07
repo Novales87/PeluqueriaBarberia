@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CardBarber({ barber, logo, handleDelete }) {
   return (
-    <div style={{ marginTop: "50px" }}>
+    <div style={{ marginTop: "10px" }}>
       <div className="card" style={{ width: "20rem" }}>
         <img
           src={logo}
