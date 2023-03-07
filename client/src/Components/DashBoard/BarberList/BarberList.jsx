@@ -28,19 +28,20 @@ function BarberList() {
   }
 
   return (
-    <div>
+    <>
       <Navbar />
-
-      {!!barbers && barbers.length > 0 ? (
-        barbers.map((barber) => (
-          <div key={barber.id}>
-            <CardBarberList barber={barber} logo={logo3} />
-          </div>
-        ))
-      ) : (
-        <div>No hay barberos disponibles</div>
-      )}
-    </div>
+      <div className="BarberList">
+        {!!barbers && barbers.length > 0 ? (
+          barbers.map((barber) => (
+            <div key={barber.id}>
+              <CardBarberList barber={barber} logo={logo3} />
+            </div>
+          ))
+        ) : (
+          <div>No hay barberos disponibles</div>
+        )}
+      </div>
+    </>
   );
 }
 
