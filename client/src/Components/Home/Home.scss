@@ -1,0 +1,13 @@
+.Home{
+    .Contenedor-Home{
+        margin-top: 50px;
+        .carousel-inner{
+            max-height: 500px;
+            .carousel-item{
+                img{
+                    max-height: 500px;
+                }
+            }
+        }
+    }
+}

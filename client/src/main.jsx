@@ -43,7 +43,9 @@ const router = createBrowserRouter([
 ]);
 
 root.render(
-  <Provider store={store}>
-    <RouterProvider router={router}></RouterProvider>
-  </Provider>
+  <div id="Mode" className="dark-mode">
+    <Provider store={store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
+  </div>
 );
