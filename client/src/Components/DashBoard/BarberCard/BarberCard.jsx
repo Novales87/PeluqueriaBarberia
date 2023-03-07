@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteBarber } from "../../../Store/deletebarberSlice";
-import barba from "../../../images/barba.png";
+import logo3 from "../../../images/Logo3.png";
 import logo from "../../../images/logo.jpeg";
 import Navbar from "../Nav/Nav";
 
@@ -28,7 +28,7 @@ function BarberCard({ barber }) {
   return (
     <div>
       <Navbar />
-      <CardBarber barber={barber} logo={logo} handleDelete={handleDelete} />
+      <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
     </div>
   );
 }
