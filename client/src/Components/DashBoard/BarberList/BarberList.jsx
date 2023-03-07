@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBarbers } from "../../../Store/fetchBarbersSlice";
 import Loading from "../../Loading/Loading";
-import { Link } from "react-router-dom";
 import "./BarberList.css";
+import Navbar from "../Nav/Nav";
+import CardBarberList from "./CardBarberList";
+import logo from "../../../images/logo.jpeg";
 
 function BarberList() {
   const barbers = useSelector((state) => state.fetchBarbers.barbers);
@@ -26,14 +28,12 @@ function BarberList() {
 
   return (
     <div>
+      <Navbar />
+
       {!!barbers && barbers.length > 0 ? (
         barbers.map((barber) => (
-          <div key={barber.id} className="BarberList">
-            <h4>Nombre {barber.name}</h4>
-            <h4>Apellido {barber.lastName}</h4>
-            <Link to={`/dashboard/detail/${barber.id}`}>
-              <button>Detalle</button>
-            </Link>
+          <div key={barber.id}>
+            <CardBarberList barber={barber} logo={logo} />
           </div>
         ))
       ) : (
