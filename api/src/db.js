@@ -37,14 +37,16 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Calendar, Barber, User } = sequelize.models;
+const { Calendar, Barber, Admin } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
-// Relación entre Calendario y Horarios (uno a uno)
-Calendar.hasOne(Barber, { foreignKey: "calendarId" });
-Barber.belongsTo(Calendar, { foreignKey: "calendarId" });
 
+// Relación entre Barbers y Calendars (uno a uno)
+ /* Barber.hasOne(Calendar, { foreignKey: 'barber_id' });
+ Calendar.belongsTo(Barber, { foreignKey: 'barber_id' }); */
+
+ Barber.belongsToMany(Calendar, {through: "barber_calendar", timestamps: false});
+Calendar.belongsToMany(Barber, {through: "barber_calendar", timestamps: false});
 
 
 module.exports = {

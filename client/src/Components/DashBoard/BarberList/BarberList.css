@@ -1,12 +1,8 @@
 .BarberList{
-    display:flex;
-    align-items:center;
-    justify-content: space-around;
-    width: 300px;
-    border: 5px solid rgba(0, 0, 0, 0.279);
-    border-radius: 8px;
-    background-color:rgba(165, 42, 42, 0.36);
-    padding: 10px;
-    margin: 10px;
-    color: aliceblue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
 }

@@ -1,4 +1,4 @@
-const { Barber } = require("../db.js");
+const { Barber ,Calendar} = require("../db.js");
 
 async function createBarber(req, res) {
   try {
@@ -157,12 +157,23 @@ async function getBarberById(req, res) {
   try {
     const { id } = req.params;
     console.log(id);
-    const barber = await Barber.findByPk(id);
+    /* const barber = await Barber.findByPk(id); */
+    const barber = await Barber.findOne({
+        where : {
+          id:parseInt(id)
+        },
+        include : [{
+          model: Calendar,
+          attributes:['id','date'],
+          through: {attributes: []}
+        }]
+    })
     if (!barber) {
       return res.status(404).json({ message: "Barber not found" });
     }
     res.json(barber);
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: "Error", error });
   }
 }
