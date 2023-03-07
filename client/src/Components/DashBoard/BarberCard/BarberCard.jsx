@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteBarber } from "../../../Store/deletebarberSlice";
 import logo3 from "../../../images/Logo3.png";
-import logo from "../../../images/logo.jpeg";
-import Navbar from "../Nav/Nav";
 
 import "./BarberCard.css";
 import CardBarber from "./CardBarber";
@@ -27,7 +25,6 @@ function BarberCard({ barber }) {
 
   return (
     <div>
-      <Navbar />
       <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
     </div>
   );

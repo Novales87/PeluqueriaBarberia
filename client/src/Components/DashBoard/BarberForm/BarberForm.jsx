@@ -1,8 +1,8 @@
+import "./BarberForm.css";
+import logo3 from "../../../images/Logo3.png";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createBarber } from "../../../Store/barberActions";
-import "./BarberForm.css";
-import logo from "../../../images/logo.jpeg";
 import Nav from "../Nav/Nav";
 
 function BarberForm() {
@@ -11,6 +11,7 @@ function BarberForm() {
     lastName: "",
     startDate: "",
     active: false,
+    phone: "",
   });
 
   const [response, setResponse] = useState("");
@@ -35,21 +36,57 @@ function BarberForm() {
         lastName: "",
         startDate: "",
         active: false,
+        phone: "",
       });
       setResponse("El barbero se creó correctamente.");
     }
   };
+
   return (
     <div className="ContainerForm">
       <Nav />
-      <div className="BarberFormCont">
-        <img src={logo} />
+
+      <div
+        style={{
+          width: "35vw",
+          color: "black",
+          backgroundColor: "white",
+          padding: "10px",
+          borderRadius: "8px",
+          marginTop: "30px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <img
+          src={logo3}
+          alt="Logo"
+          style={{
+            width: "40%",
+            marginTop: "10px",
+            marginBottom: "10px",
+          }}
+        />
+
         <h3>Crear Nuevo Barbero</h3>
+
         <form onSubmit={handleSubmit}>
           {response && <h>{response}</h>}
-          <div>
-            <label htmlFor="name">Nombre:</label>
+
+          <div
+            className="mb-3"
+            style={{
+              width: "80%",
+              color: "black",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            <label htmlFor="name" className="form-label">
+              <h6>Nombre:</h6>
+            </label>
             <input
+              className="form-control"
               type="text"
               id="name"
               name="name"
@@ -57,9 +94,21 @@ function BarberForm() {
               onChange={handleInputChange}
             />
           </div>
-          <div>
-            <label htmlFor="lastName">Apellido:</label>
+
+          <div
+            className="mb-3"
+            style={{
+              width: "80%",
+              color: "black",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            <label htmlFor="lastName" className="form-label">
+              <h6> Apellido:</h6>
+            </label>
             <input
+              className="form-control"
               type="text"
               id="lastName"
               name="lastName"
@@ -67,8 +116,44 @@ function BarberForm() {
               onChange={handleInputChange}
             />
           </div>
-          <div>
-            <label htmlFor="startDate">Fecha de inicio:</label>
+
+          <div
+            className="mb-3"
+            style={{
+              width: "80%",
+              color: "black",
+              margin: "auto",
+            }}
+          >
+            <label htmlFor="phone" className="form-label">
+              <h6>Teléfono:</h6>
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="phone"
+              name="phone"
+              value={barber.phone}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div
+            style={{
+              width: "80%",
+              color: "black",
+              margin: "auto",
+            }}
+          >
+            <label
+              htmlFor="startDate"
+              style={{
+                marginRight: "10px",
+                padding: "10px",
+              }}
+            >
+              <h6>Fecha de inicio:</h6>
+            </label>
             <input
               type="date"
               id="startDate"
@@ -77,8 +162,24 @@ function BarberForm() {
               onChange={handleInputChange}
             />
           </div>
-          <div>
-            <label htmlFor="active">Activo:</label>
+
+          <div
+            className="mb-3 form-check"
+            style={{
+              width: "30%",
+              color: "black",
+              padding: "10px",
+              margin: "auto",
+            }}
+          >
+            <label
+              htmlFor="active"
+              style={{
+                marginRight: "10px",
+              }}
+            >
+              <h6> Activo:</h6>
+            </label>
             <input
               type="checkbox"
               id="active"
@@ -92,7 +193,10 @@ function BarberForm() {
               }
             />
           </div>
-          <button type="submit">Guardar</button>
+
+          <button type="submit" className="btn btn-primary">
+            Guardar
+          </button>
         </form>
       </div>
     </div>
