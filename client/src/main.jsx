@@ -11,6 +11,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import BarberUpdateForm from "./Components/DashBoard/BarberUpdate/BarberUpdate";
 import Loading from "./Components/Loading/Loading";
+import Login from "./Components/Login/Login";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path: "/loading",
     element: <Loading />,
   },
+  {
+    path: "/login",
+    element: <Login />,
+  }
 ]);
 
 root.render(
