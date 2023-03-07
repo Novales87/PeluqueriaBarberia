@@ -5,8 +5,8 @@ const router = Router();
 const { createCalendar, getCalendar, getAllCalendars } = require("../controllers/calendar")
 
 router.post("/", async(req,res) => {
-    const {start,final} = req.body
-    let newCalendar = await createCalendar(start,final);
+    const {id,start,final} = req.body
+    let newCalendar = await createCalendar(id,start,final);
     res.status(200).send(newCalendar)
 })
 router.get("/:id", async(req,res) => {
