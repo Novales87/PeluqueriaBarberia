@@ -1,35 +1,13 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import barba from "../../../images/barba.png";
-// import logo from "../../../images/logo.jpeg";
-// import "./BarberCard.css";
-
-// function BarberCard({ barber }) {
-//   return (
-//     <div className="barberCardDetail">
-//       <img key={barber.id} src={logo}></img>
-//       <div className="barberCardDetail2">
-//         <h2>{barber.name}</h2>
-//         <h2>{barber.lastName}</h2>
-//         <p>{barber.startDate}</p>
-//         <h4>{barber.active ? "Activo" : "Inactivo"}</h4>
-//         <button>Eliminar</button>
-//         <Link to={`/dashboard/update/${barber.id}`}>
-//           <button>Editar</button>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default BarberCard;
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteBarber } from "../../../Store/deletebarberSlice";
-import barba from "../../../images/barba.png";
+import logo3 from "../../../images/Logo3.png";
 import logo from "../../../images/logo.jpeg";
+import Navbar from "../Nav/Nav";
+
 import "./BarberCard.css";
+import CardBarber from "./CardBarber";
 
 function BarberCard({ barber }) {
   const dispatch = useDispatch();
@@ -48,21 +26,9 @@ function BarberCard({ barber }) {
   };
 
   return (
-    <div className="barberCardDetail">
-      <img key={barber.id} src={logo}></img>
-      <div className="barberCardDetail2">
-        <h2>{barber.name}</h2>
-        <h2>{barber.lastName}</h2>
-        <p>{barber.startDate}</p>
-        <h4>Estado: {barber.active ? "Activo" : "Inactivo"}</h4>
-        <button onClick={handleDelete}>Eliminar</button>
-        <Link to={`/dashboard/update/${barber.id}`}>
-          <button>Editar</button>
-        </Link>
-      </div>
-      <Link to={`/dashboard/barbers`}>
-        <button>Volver</button>
-      </Link>
+    <div>
+      <Navbar />
+      <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
     </div>
   );
 }

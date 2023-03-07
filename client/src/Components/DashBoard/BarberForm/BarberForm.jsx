@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { createBarber } from "../../../Store/barberActions";
 import "./BarberForm.css";
 import logo from "../../../images/logo.jpeg";
+import Nav from "../Nav/Nav";
 
 function BarberForm() {
   const [barber, setBarber] = useState({
@@ -23,7 +24,7 @@ function BarberForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setResponse(""); // restablecer la respuesta antes de enviar la solicitud
+    setResponse(""); // restablece la respuesta antes de enviar la solicitud
 
     const resultAction = await dispatch(createBarber(barber));
     if (resultAction.payload.error) {
@@ -40,6 +41,7 @@ function BarberForm() {
   };
   return (
     <div className="ContainerForm">
+      <Nav />
       <div className="BarberFormCont">
         <img src={logo} />
         <h3>Crear Nuevo Barbero</h3>
