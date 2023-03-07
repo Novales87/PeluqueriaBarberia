@@ -1,0 +1,30 @@
+.Card-Container{
+    margin: 1.5%;
+    .P1{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .P2{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        a{
+            color: darkgray;
+        }
+        .informacion{
+            display: none;
+            min-height: 590px;
+            max-height: 590px;
+            overflow-y: scroll;
+            .Cortes{
+                max-width:540px;
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+        }
+        .mostrar{
+            display: flex;
+        }
+    }
+}
