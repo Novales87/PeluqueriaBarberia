@@ -1,9 +1,11 @@
 import { useEffect } from "react";
+import "./BarberDetail.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
 import Loading from "../../Loading/Loading";
 import BarberCard from "../BarberCard/BarberCard";
+import Navbar from "../Nav/Nav";
 
 function BarberDetails() {
   const { id } = useParams();
@@ -26,11 +28,8 @@ function BarberDetails() {
 
   return (
     <div>
-      {barber && (
-        <>
-          <BarberCard barber={barber} style={{ marginTop: "50px" }} />
-        </>
-      )}
+      <Navbar />
+      <div className="Details">{barber && <BarberCard barber={barber} />}</div>
     </div>
   );
 }

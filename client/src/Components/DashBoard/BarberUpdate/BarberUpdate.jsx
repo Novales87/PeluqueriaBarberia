@@ -6,7 +6,8 @@ import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
 import Loading from "../../Loading/Loading";
 import "./BarberUpdate.css";
 import logo3 from "../../../images/Logo3.png";
-import logo from "../../../images/logo.jpeg";
+import Navbar from "../Nav/Nav";
+import AddCalendar from "./AddCalendar";
 
 function BarberUpdate() {
   const { id } = useParams();
@@ -52,63 +53,158 @@ function BarberUpdate() {
   };
 
   return (
-    <div className="barberUpBox">
-      <img src={logo3} />
-      {status === "loading" ? (
-        <Loading />
-      ) : status === "failed" ? (
-        <div>{error}</div>
-      ) : (
-        barber && (
-          <div className="barberUpBox2">
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="name">Nombre:</label>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+    <>
+      <Navbar />
+      <div className="ContainerUp">
+        <div className="barberUpBox">
+          <img
+            src={logo3}
+            style={{
+              width: "40%",
+              marginTop: "10px",
+              marginBottom: "10px",
+            }}
+          />
+          {status === "loading" ? (
+            <Loading />
+          ) : status === "failed" ? (
+            <div>{error}</div>
+          ) : (
+            barber && (
+              <div className="barberUpBox2">
+                <form onSubmit={handleSubmit}>
+                  <div
+                    className="mb-3"
+                    style={{
+                      width: "80%",
+                      color: "black",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  >
+                    <label
+                      htmlFor="name"
+                      className="form-label"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "0px",
+                      }}
+                    >
+                      <h5>Nombre:</h5>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div
+                    className="mb-3"
+                    style={{
+                      width: "80%",
+                      color: "black",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  >
+                    <label
+                      htmlFor="lastName"
+                      className="form-label"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "0px",
+                      }}
+                    >
+                      <h5>Apellido:</h5>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="lastName"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
+                  </div>
 
-              <label htmlFor="lastName">Apellido:</label>
-              <input
-                type="text"
-                id="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
+                  <div
+                    className="mb-3"
+                    style={{
+                      width: "80%",
+                      color: "black",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  >
+                    <label
+                      htmlFor="startDate"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "0px",
+                      }}
+                    >
+                      <h6>Fecha de inicio:</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="date"
+                      id="startDate"
+                      value={startDate}
+                      onChange={(e) => setStartDate(e.target.value)}
+                    />
+                  </div>
 
-              <label htmlFor="startDate">Fecha de inicio:</label>
-              <input
-                type="date"
-                id="startDate"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-              />
+                  <div
+                    className="mb-3"
+                    style={{
+                      width: "80%",
+                      color: "black",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  >
+                    <label
+                      htmlFor="active"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "0px",
+                      }}
+                    >
+                      <h6>Activo:</h6>
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="active"
+                      checked={active}
+                      onChange={(e) => setActive(e.target.checked)}
+                    />
+                  </div>
 
-              <label htmlFor="active">Activo:</label>
-              <input
-                type="checkbox"
-                id="active"
-                checked={active}
-                onChange={(e) => setActive(e.target.checked)}
-              />
-
-              <button type="submit" onClick={handleSubmit}>
-                Guardar
-              </button>
-              {operationStatus === "success" && <p>¡Actualización exitosa!</p>}
-              {operationStatus === "failed" && (
-                <p>Hubo un error al actualizar los datos.</p>
-              )}
-            </form>
-          </div>
-        )
-      )}
-      <Link to={`/dashboard/detail/${barber.id}`}>
-        <button>volver</button>
-      </Link>
-    </div>
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="btn btn-primary btn-sm"
+                  >
+                    Guardar
+                  </button>
+                  {operationStatus === "success" && (
+                    <p>¡Actualización exitosa!</p>
+                  )}
+                  {operationStatus === "failed" && (
+                    <p>Hubo un error al actualizar los datos.</p>
+                  )}
+                </form>
+                <AddCalendar barberId={barber.id} />
+                <Link to={`/dashboard/detail/${barber.id}`}>
+                  <button className="btn btn-primary btn-sm">volver</button>
+                </Link>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { verifyLogin } from "../../Store/login/loginSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../../images/logo.jpeg"
+import "./Login.scss";
 
 function Login() {
 
@@ -34,7 +36,7 @@ function Login() {
     if (email.match(gmailPattern)) {
       try {
         dispatch(verifyLogin(formLogin))
-        navigate("/");
+        navigate("/dashboard/barbers");
       } catch (error) {
         throw Error(error);
       }
@@ -45,53 +47,50 @@ function Login() {
   };
 
   return (
-    <form
-      style={{ display: "flex", flexDirection: "column", alignItems: "Center" }}
-      onSubmit={handleSubmit}
-    >
-      <div>
-        <h1>Please sig in</h1>
-      </div>
-      <div>
-        <div>
-
-        <label htmlFor="email"> Correo Electrónico: </label>
+  <div className="Login-container"> 
+      <img className="logo-barber fade-in-logo" src ={logo} alt ="The Cutman"/>
+      <form onSubmit={handleSubmit} className="Login-form-container fade-in">
+        <h1 className="title-sign-in">Sign in</h1>
+        <div className="container-gmail">
+          <div className="gmail-box">
+            <i class='bx bx-envelope' style={{color:"#ffffff" }} ></i>
+          </div>
+          <input
+            name="email"
+            className="input-gmail"
+            placeholder="Correo Electrónico"
+            type="text"
+            id="email"
+            value={formLogin.email}
+            onChange={(e) => handleChangeLogin(e)}
+            autoComplete="off"
+            required
+          />
         </div>
-        <input
-          name="email"
-          type="text"
-          id="email"
-          value={formLogin.email}
-          onChange={(e) => handleChangeLogin(e)}
-          autoComplete="off"
-          required
-        />
-      </div>
-
-      <div>
-        <div>
-          <label htmlFor="password"> Contraseña: </label>
+        <div className="container-password">
+          <div className="password-box">
+            <i class='bx bx-lock' style={{color:"#ffffff" }} ></i>
+          </div>
+          <input
+            name="password"
+            className="input-password"
+            placeholder="Contraseña"
+            type="password"
+            id="password"
+            value={formLogin.password}
+            onChange={(e) => handleChangeLogin(e)}
+            autoComplete="off"
+            required
+          />
         </div>
-        <input
-          name="password"
-          type="password"
-          id="password"
-          value={formLogin.password}
-          onChange={(e) => handleChangeLogin(e)}
-          autoComplete="off"
-          required
-        />
-      </div>
-
-      <div className="d-grid gap-2 col-6 mx-auto">
-        <button className="btn btn-primary" type="submit">
-          Sign In
-        </button>
-      </div>
-      <div>
-        <h4>© 2022-2023</h4>
-      </div>
-    </form>
+        <div className="d-grid gap-2 col-6 mx-auto">
+          <button className="btn btn-primary" type="submit">
+            Sign In
+          </button>
+        </div>
+        <h4 className="reserved-c">© 2022-2023</h4>
+      </form>
+    </div>
   );
 }
 
