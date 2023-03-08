@@ -32,9 +32,8 @@ const verifyLogin = async (formData) => {
 
     if(admin) {
         if(bcrypt.compareSync(password, admin.password)) {
-            const accessToken = generateAccessToken(admin);
-            console.log(accessToken);
-            return { welcome: "hello" };
+            const accessToken = generateAccessToken({id: admin.id, onDuty: admin.onDuty});
+            return accessToken;
         } else {
             throw {
                 status: false,

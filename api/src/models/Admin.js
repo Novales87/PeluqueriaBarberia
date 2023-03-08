@@ -5,9 +5,10 @@ module.exports = (sequelize) => {
     "Admin",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        autoIncrement: true,
+        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
@@ -21,7 +22,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      active: {
+      onDuty: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
       },

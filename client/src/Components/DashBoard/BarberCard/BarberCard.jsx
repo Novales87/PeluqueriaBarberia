@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteBarber } from "../../../Store/deletebarberSlice";
+import { deleteBarber } from "../../../Store/deleteBarberSlice";
 import logo3 from "../../../images/Logo3.png";
 
 import "./BarberCard.css";

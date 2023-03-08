@@ -1,9 +1,35 @@
-.Login-Flex{
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.Login-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
     height: 100%;
     justify-content: center;
-    .Login-Container {
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+
+    .fade-in {
+        animation: fadeIn 3s ease-in-out;
+      }
+      .fade-in-logo {
+        animation: fadeIn 3s backwards;
+      }
+    .logo-barber{
+       width: 25rem;
+       padding-left: 12px; 
+    }
+    .Login-form-container {
         display: flex; 
         flex-direction: column;
         align-items: Center;
@@ -12,7 +38,119 @@
         min-width: 215px;
         align-items: center;
         gap:10px;
-        background-color: aliceblue;
-        border-radius: 30px;
+        background-color: transparent transparent;
+
+        .title-sign-in {
+            color:whitesmoke;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            user-select: none;
+            margin-top: 2rem;
+        }
+        .container-gmail{
+            display :flex ;
+            width: 25rem;
+            justify-content: center;
+        }
+        
+        .gmail-box{
+            margin-top: 3.3rem;
+            margin-right: 1rem;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+        //input Gmail
+        .input-gmail {
+            color:whitesmoke;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            margin-top: 3rem;
+            transition: 0.4s;
+        }
+        .input-gmail:focus {
+            outline: none;
+            transform: scale(1.2);
+            transition: 0.2s;
+            
+          }
+          .container-gmail:focus-within .gmail-box {
+            transform: translateX(-20px);
+            transition: 0.2s;
+          }
+          
+        input[type="text"]::-webkit-input-placeholder {
+            color: rgba(245, 245, 245, 0.428);
+          }
+
+        .container-password{
+            display :flex ;
+            width: 25rem;
+            justify-content: center;
+        }
+        .password-box{
+            margin-top: 1rem;
+            margin-right: 1rem;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+        
+          //input Password
+        .input-password {
+            color: whitesmoke;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+            transition: 0.4s;
+        }
+        .input-password:focus {
+            outline: none;
+            transform: scaleX(1.2);
+            transition: 0.2s;
+          }
+          .container-password:focus-within .password-box {
+            transform: translateX(-20px);
+            transition: 0.2s;
+          }   
+        input[type="password"]::-webkit-input-placeholder {
+            color: rgba(245, 245, 245, 0.428);
+          }
+
+        .reserved-c {
+            color: whitesmoke;
+            padding-top: 4.5rem;
+            font-size: medium;
+            user-select: none;
+        }
     }
+   
 }
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition:0.2s;
+  }
+ 
+  //BREAKPOINTS
+   
+   /* For medium devices */
+   @media screen and (max-width: 768px) {
+    
+    .logo-barber{
+        width:18rem !important;
+        }
+ }
+   @media screen and (max-width: 576px) {
+    
+ }
+   
+   /* For small devices */
+   @media screen and (max-width: 350px) {
+
+    .logo-barber{
+     
+        width:15rem !important;
+        }
+    
+   }
