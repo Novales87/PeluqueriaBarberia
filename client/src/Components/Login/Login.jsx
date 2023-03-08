@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../../images/logo.jpeg"
 import "./Login.scss";
 
 function Login() {
@@ -22,20 +23,24 @@ function Login() {
   };
 
   return (
-    <div className="Login-Flex">
+    <div className="Login-container">
+      <img className="logo-barber" src ={logo} alt ="The Cutman"/>
       <form
         onSubmit={handleSubmit}
-        className="Login-Container"
+        className="Login-form-container"
       >
-        <div>
-          <h1>Please sig in</h1>
-        </div>
-        <div>
-          {/* <div>
-            <label htmlFor="email"> Correo Electrónico: </label>
-          </div> */}
+        
+          <h1 className="title-sign-in">Sign in</h1>
+        
+        
+         <div className="container-gmail">
+          <div className="gmail-box">
+
+         <i class='bx bx-envelope' style={{color:"#ffffff" }} ></i>
+          </div>
           <input
-            placeholder="Correo Electrónico:"
+          className="input-gmail"
+            placeholder="Correo Electrónico"
             type="text"
             id="email"
             value={email}
@@ -43,13 +48,20 @@ function Login() {
             autoComplete="off"
             required
           />
-        </div>
+         </div>
+        
 
-        <div>
+        
           {/* <div>
           <label htmlFor="password"> Contraseña: </label>
         </div> */}
+       
+         <div className="container-password">
+            <div className="password-box">
+            <i class='bx bx-lock' style={{color:"#ffffff" }} ></i>
+            </div>
           <input
+          className="input-password"
             placeholder="Contraseña"
             type="password"
             id="password"
@@ -58,16 +70,19 @@ function Login() {
             autoComplete="off"
             required
           />
-        </div>
+         </div>
+          
+        
+        
 
         <div className="d-grid gap-2 col-6 mx-auto">
           <button className="btn btn-primary" type="submit">
             Sign In
           </button>
         </div>
-        <div>
-          <h4>© 2022-2023</h4>
-        </div>
+        
+          <h4 className="reserved-c">© 2022-2023</h4>
+        
       </form>
     </div>
 
