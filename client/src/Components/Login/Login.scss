@@ -17,10 +17,10 @@
     justify-content: center;
     background-color: black;
     .fade-in {
-        animation: fadeIn 4s ease-in;
+        animation: fadeIn 3s ease-in-out;
       }
       .fade-in-logo {
-        animation: fadeIn 3s ease-in;
+        animation: fadeIn 3s backwards;
       }
     .logo-barber{
        width: 25rem;
