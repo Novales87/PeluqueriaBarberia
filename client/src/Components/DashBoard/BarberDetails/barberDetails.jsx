@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./BarberDetail.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
