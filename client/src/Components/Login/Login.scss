@@ -17,10 +17,10 @@
     justify-content: center;
     background-color: black;
     .fade-in {
-        animation: fadeIn 1s ease-in;
+        animation: fadeIn 5.5s ease-in;
       }
       .fade-in-logo {
-        animation: fadeIn 3s ease-in;
+        animation: fadeIn 2s ease-in;
       }
     .logo-barber{
        width: 25rem;
@@ -42,6 +42,7 @@
         .title-sign-in {
             color:whitesmoke;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            user-select: none;
             margin-top: 2rem;
         }
         .container-gmail{
@@ -119,6 +120,7 @@
             color: whitesmoke;
             padding-top: 4.5rem;
             font-size: medium;
+            user-select: none;
         }
     }
    
