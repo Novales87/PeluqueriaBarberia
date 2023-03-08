@@ -1,3 +1,13 @@
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 .Login-container{
     display: flex;
     flex-direction: column;
@@ -6,6 +16,12 @@
     height: 100%;
     justify-content: center;
     background-color: black;
+    .fade-in {
+        animation: fadeIn 1s ease-in;
+      }
+      .fade-in-logo {
+        animation: fadeIn 3s ease-in;
+      }
     .logo-barber{
        width: 25rem;
        padding-left: 12px; 
