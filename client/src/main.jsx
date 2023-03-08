@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./Store/store";
 import App from "./App";
 import "./index.scss";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import BarberForm from "./Components/DashBoard/BarberForm/BarberForm";
 import BarberList from "./Components/DashBoard/BarberList/BarberList";
 import BarberDetails from "./Components/DashBoard/BarberDetails/barberDetails";
@@ -13,6 +13,7 @@ import Home from "./Components/Home/Home";
 import BarberUpdateForm from "./Components/DashBoard/BarberUpdate/BarberUpdate";
 import Loading from "./Components/Loading/Loading";
 import Login from "./Components/Login/Login";
+import BarberCalendar from "./Components/DashBoard/calendar/BarberCalendar";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -42,9 +43,13 @@ const router = createBrowserRouter([
     element: <Loading />,
   },
   {
+    path: "/calendar",
+    element: <BarberCalendar />,
+  },
+  {
     path: "/login",
     element: <Login />,
-  }
+  },
 ]);
 
 root.render(
