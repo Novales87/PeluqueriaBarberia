@@ -16,6 +16,9 @@
     height: 100%;
     justify-content: center;
     background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+
     .fade-in {
         animation: fadeIn 3s ease-in-out;
       }
@@ -27,7 +30,7 @@
        padding-left: 12px; 
     }
     .Login-form-container {
-        height: 27rem;
+        border:2px solid red;
         display: flex; 
         flex-direction: column;
         align-items: Center;
@@ -37,7 +40,6 @@
         align-items: center;
         gap:10px;
         background-color: transparent transparent;
-        border-radius: 30px;
 
         .title-sign-in {
             color:whitesmoke;
@@ -131,3 +133,26 @@ input:focus::-webkit-input-placeholder {
     transition:0.2s;
   }
  
+  //BREAKPOINTS
+   
+   /* For medium devices */
+   @media screen and (max-width: 768px) {
+    
+    .logo-barber{
+        border:2px solid red;
+        width:18rem !important;
+        }
+ }
+   @media screen and (max-width: 576px) {
+    
+ }
+   
+   /* For small devices */
+   @media screen and (max-width: 350px) {
+    
+    .logo-barber{
+        border:2px solid blue;
+        width:15rem !important;
+        }
+    
+   }
