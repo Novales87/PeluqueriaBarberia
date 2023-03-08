@@ -1,20 +1,44 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { verifyLogin } from "../../Store/login/loginSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const [formLogin, setFormLogin] = useState({
+    email: "",
+    password: "",
+  });
+  // navigate('/home', { state: { from: location }, replace: true})
 
   //Verificación de Gmail
+
+  const handleChangeLogin = (e) => {
+    setFormLogin({
+      ...formLogin,
+      [e.target.name]: e.target.value,
+    })
+    console.log(formLogin);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail.com$/i;
-    console.log(email, password);
+    console.log(formLogin);
+    const email = formLogin.email;
 
     if (email.match(gmailPattern)) {
-      setPassword("");
-      setEmail("");
+      try {
+        dispatch(verifyLogin(formLogin))
+        navigate("/");
+      } catch (error) {
+        throw Error(error);
+      }
+      
     } else {
       alert("Por favor ingrese una dirección de Gmail válida");
     }
@@ -34,10 +58,11 @@ function Login() {
         <label htmlFor="email"> Correo Electrónico: </label>
         </div>
         <input
+          name="email"
           type="text"
           id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formLogin.email}
+          onChange={(e) => handleChangeLogin(e)}
           autoComplete="off"
           required
         />
@@ -48,10 +73,11 @@ function Login() {
           <label htmlFor="password"> Contraseña: </label>
         </div>
         <input
+          name="password"
           type="password"
           id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={formLogin.password}
+          onChange={(e) => handleChangeLogin(e)}
           autoComplete="off"
           required
         />
