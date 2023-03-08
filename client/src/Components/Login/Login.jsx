@@ -23,7 +23,7 @@ function Login() {
   };
 
   return (
-    <div className="Login-container "> 
+    <div className="Login-container"> 
       <img className="logo-barber fade-in-logo" src ={logo} alt ="The Cutman"/>
       <form onSubmit={handleSubmit} className="Login-form-container fade-in">
         <h1 className="title-sign-in">Sign in</h1>
