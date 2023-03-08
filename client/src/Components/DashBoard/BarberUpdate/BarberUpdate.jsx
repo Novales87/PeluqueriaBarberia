@@ -7,6 +7,7 @@ import Loading from "../../Loading/Loading";
 import "./BarberUpdate.css";
 import logo3 from "../../../images/Logo3.png";
 import Navbar from "../Nav/Nav";
+import AddCalendar from "./AddCalendar";
 
 function BarberUpdate() {
   const { id } = useParams();
@@ -194,33 +195,7 @@ function BarberUpdate() {
                     <p>Hubo un error al actualizar los datos.</p>
                   )}
                 </form>
-                <h6>Asignar Horario</h6>
-                <div className="Hours">
-                  <label htmlFor="horaInicio">
-                    <h6>inicio:</h6>
-                  </label>
-                  <input
-                    type="time"
-                    id="horaInicio"
-                    name="horaInicio"
-                    value={""}
-                    onChange={""}
-                  />
-
-                  <label htmlFor="horaFin">
-                    <h6>fin:</h6>
-                  </label>
-                  <input
-                    type="time"
-                    id="horaFin"
-                    name="horaFin"
-                    value={""}
-                    onChange={""}
-                  />
-                  <button type="submit" className="btn btn-primary btn-sm">
-                    Asignar
-                  </button>
-                </div>
+                <AddCalendar barberId={barber.id} />
                 <Link to={`/dashboard/detail/${barber.id}`}>
                   <button className="btn btn-primary btn-sm">volver</button>
                 </Link>

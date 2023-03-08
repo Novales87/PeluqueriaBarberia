@@ -4,7 +4,7 @@ import fetchBarbersSlice from "./fetchBarbersSlice";
 import fetchBarberByIdSlice from "./fetchBarberByIdSlice";
 import updateBarberReducer from "./updateBarberSlice";
 import deleteBarberSlice from "./deleteBarberSlice";
-import CreateCalendarSlice from "./CreateCalendarSlice";
+import createCalendarSlice from "./CreateCalendarSlice";
 const store = configureStore({
   reducer: {
     // aquí van tus reducers
@@ -13,7 +13,7 @@ const store = configureStore({
     fetchBarberById: fetchBarberByIdSlice,
     updateBarber: updateBarberReducer,
     deleteBarber: deleteBarberSlice,
-    calendarSlice: CreateCalendarSlice,
+    calendar: createCalendarSlice,
   },
 });
 
