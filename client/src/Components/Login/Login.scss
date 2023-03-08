@@ -30,7 +30,6 @@
        padding-left: 12px; 
     }
     .Login-form-container {
-        border:2px solid red;
         display: flex; 
         flex-direction: column;
         align-items: Center;
@@ -139,7 +138,6 @@ input:focus::-webkit-input-placeholder {
    @media screen and (max-width: 768px) {
     
     .logo-barber{
-        border:2px solid red;
         width:18rem !important;
         }
  }
@@ -149,9 +147,9 @@ input:focus::-webkit-input-placeholder {
    
    /* For small devices */
    @media screen and (max-width: 350px) {
-    
+
     .logo-barber{
-        border:2px solid blue;
+     
         width:15rem !important;
         }
     
