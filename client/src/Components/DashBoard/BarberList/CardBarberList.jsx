@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function CardBarberList({ barber, logo }) {
   return (
-    <div>
-      <div className="row" style={{ marginTop: "10px" }}>
-        <div className="col-xs-8 col-md-9 col-xl-5  ">
+      
           <div className="card">
             <div className="card-body">
               <img
@@ -26,9 +24,6 @@ function CardBarberList({ barber, logo }) {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 }
 

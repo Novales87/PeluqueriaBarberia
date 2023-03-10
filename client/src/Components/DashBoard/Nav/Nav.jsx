@@ -3,12 +3,9 @@ import logo from "../../../images/logo.jpeg";
 import { Link } from "react-router-dom";
 function Nav() {
   return (
-    <nav
-      className="navbar  navbar-expand-sm navbar-dark bg-dark "
-      style={{ marginTop: "5px" }}
-    >
-      <img src={logo} className="img-fluid" style={{ width: "100px" }} />
+    <nav className="navbar  navbar-expand-sm navbar-dark bg-dark ">
       <div className="container-fluid">
+        <img src={logo} className="img-fluid" style={{ width: "100px" }} />
         <Link className="navbar-brand" href="#"></Link>
         <button
           className="navbar-toggler"

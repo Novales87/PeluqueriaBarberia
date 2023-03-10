@@ -1,8 +1,12 @@
 .BarberList{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-   
+    margin: 10px;
+}
+.BarberList .btn {
+    margin-bottom: 10px;
+}
+.BarberList .card{
+    margin: 1%;
+}
+.Contenedor-cardL{
+    padding: 0;
 }

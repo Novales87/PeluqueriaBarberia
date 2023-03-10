@@ -30,11 +30,11 @@ function BarberList() {
   return (
     <>
       <Navbar />
-      <div className="BarberList">
+      <div className="BarberList row">
         {!!barbers && barbers.length > 0 ? (
           barbers.map((barber) => (
-            <div key={barber.id}>
-              <CardBarberList barber={barber} logo={logo3} />
+            <div className="Contenedor-cardL col-md-3">
+              <CardBarberList barber={barber} logo={logo3} key={barber.id} />
             </div>
           ))
         ) : (
