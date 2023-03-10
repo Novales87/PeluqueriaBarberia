@@ -48,7 +48,6 @@ function BarberForm() {
 
       <div
         style={{
-          width: "35vw",
           color: "black",
           backgroundColor: "white",
           padding: "10px",
@@ -57,6 +56,7 @@ function BarberForm() {
           marginLeft: "auto",
           marginRight: "auto",
         }}
+        className="holaqase"
       >
         <img
           src={logo3}
@@ -70,8 +70,8 @@ function BarberForm() {
 
         <h3>Crear Nuevo Barbero</h3>
 
-        <form onSubmit={handleSubmit}>
-          {response && <h>{response}</h>}
+        <form onSubmit={handleSubmit} className="Llename">
+          {response && <h5>{response}</h5>}
 
           <div
             className="mb-3"

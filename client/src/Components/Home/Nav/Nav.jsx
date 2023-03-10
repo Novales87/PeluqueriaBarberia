@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.scss"
 import logo from "../../../images/logo.jpeg";
+import { toggleDarkLight } from "../../../Utils/Mode";
 
 export default function Nav() {
 
@@ -22,6 +23,13 @@ export default function Nav() {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">AboutUs</a>
+                            </li>
+                            <li className="nav-item">
+                                <div className="toggle-switcher" onClick={(e)=>toggleDarkLight(e)}>
+                                    <input type="checkbox" id="toggle-switch" className="toggle-input"/>
+                                        <label htmlFor="toggle-switch" className="toggle-label"></label>
+                                        {/* onClick={(e)=>toggleDarkLight(e)} */}
+                                </div>
                             </li>
                         </ul>
                     </div>
