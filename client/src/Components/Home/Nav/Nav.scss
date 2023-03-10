@@ -1,13 +1,80 @@
-.contenedor-nav{
-    .navbar{
+.contenedor-nav {
+    .navbar {
         top: 0;
         width: 100%;
-        position:fixed;
+        position: fixed;
         z-index: 1;
         padding: 0;
-        .navbar-brand{
-            span{
+
+        .container-fluid {
+            background-color: var(--Fondo1);
+        }
+
+        .navbar-brand {
+            span {
                 margin-left: 5px;
+            }
+        }
+
+        li {
+            display: flex;
+
+            .toggle-switcher {
+                width: 50px;
+                height: 25px;
+                position: relative;
+                margin: auto 20px;
+                background: #000;
+                border-radius: 50px;
+
+                .toggle-input {
+                    display: none;
+                }
+
+                .toggle-label {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    box-shadow: 0 0 0 0 #ff0000;
+                }
+
+                .toggle-label::before {
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                }
+
+                .toggle-input:checked+.toggle-label {
+                    animation: shadow-animation_5020 2s linear infinite;
+                }
+
+                .toggle-input:checked+.toggle-label::before {
+                    transform: translateX(25px);
+                }
+
+                @keyframes shadow-animation_5020 {
+                    0% {
+                        box-shadow: 0 0 0 0 #ff0000;
+                    }
+
+                    50% {
+                        box-shadow: 0 0 25px 25px #ffa500;
+                    }
+
+                    100% {
+                        box-shadow: 0 0 0 0 #ff0000;
+                    }
+                }
             }
         }
     }

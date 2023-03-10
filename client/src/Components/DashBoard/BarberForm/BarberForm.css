@@ -1,7 +1,7 @@
- body{
+ /* body{
     background-image: url(../../../images/foto9.jpeg);
     background-size: cover;
-}
+} */
 
 
 .BarberFormCont{
@@ -33,4 +33,13 @@
 
 .BarberFormCont button {
     margin: 10px;
+}
+
+.holaqase{
+    max-width:600px;
+    margin-bottom:  100px;
+    border: 2px solid red;
+}
+.Llename input{
+    text-align: left;
 }

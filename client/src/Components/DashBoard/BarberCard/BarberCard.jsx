@@ -24,9 +24,7 @@ function BarberCard({ barber }) {
   };
 
   return (
-    <div>
       <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
-    </div>
   );
 }
 
