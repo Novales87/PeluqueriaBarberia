@@ -1,32 +1,36 @@
 function toggleDarkLight(e) {
   e.preventDefault();
-  var Mode = document.getElementById("Mode");
-  var currentClass = Mode.className;
+  let Mode = document.getElementById("Mode");
+  let currentClass = Mode.className;
   Mode.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-
-  switch (Mode.className) {
-    case "dark-mode":
-      Mode.style.setProperty("--Fondo1", getComputedStyle(Mode).getPropertyValue("--F1N"));
-      Mode.style.setProperty("--Fondo2", getComputedStyle(Mode).getPropertyValue("--F2N"));
-      Mode.style.setProperty("--Fondo3", getComputedStyle(Mode).getPropertyValue("--F3N"));
-      Mode.style.setProperty("--Fondo4", getComputedStyle(Mode).getPropertyValue("--F4N"));
-      Mode.style.setProperty("--Fondo5", getComputedStyle(Mode).getPropertyValue("--F5N"));
-
-
-      break;
-    case "light-mode":
-      Mode.style.setProperty("--Fondo1", getComputedStyle(Mode).getPropertyValue("--F1D"));
-      Mode.style.setProperty("--Fondo2", getComputedStyle(Mode).getPropertyValue("--F2D"));
-      Mode.style.setProperty("--Fondo3", getComputedStyle(Mode).getPropertyValue("--F3D"));
-      Mode.style.setProperty("--Fondo4", getComputedStyle(Mode).getPropertyValue("--F4D"));
-      Mode.style.setProperty("--Fondo5", getComputedStyle(Mode).getPropertyValue("--F5D"));
-      
-
-      break;
-    default:
-      break;
-  }
+  ColorChange(e,Mode);
+  
   // element.style.setProperty("--my-var", jsVar + 4);
 }
-export { toggleDarkLight };
+
+function ColorChange(){
+  let Mode = document.getElementById("Mode");
+  if(Mode!=null){
+    let i=1;
+    switch (Mode.className) {
+      case "dark-mode":
+        while (i<=5) {
+          Mode.style.setProperty("--Fondo"+[i], getComputedStyle(Mode).getPropertyValue("--F"+[i]+"N")); 
+          Mode.style.setProperty("--Texto"+[i], getComputedStyle(Mode).getPropertyValue("--T"+[i]+"N"));
+          i++;
+        }
+        break;
+      case "light-mode":
+        while (i<=5) {
+          Mode.style.setProperty("--Fondo"+[i], getComputedStyle(Mode).getPropertyValue("--F"+[i]+"D")); 
+          Mode.style.setProperty("--Texto"+[i], getComputedStyle(Mode).getPropertyValue("--T"+[i]+"D"));
+          i++;
+        }
+        break;
+      default:
+        break;
+    }
+  }
+}
+export { toggleDarkLight ,ColorChange };
 

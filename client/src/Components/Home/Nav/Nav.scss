@@ -5,16 +5,29 @@
         position: fixed;
         z-index: 1;
         padding: 0;
-
         .container-fluid {
+            transition: 1s;
             background-color: var(--Fondo1);
-        }
-
-        .navbar-brand {
-            span {
-                margin-left: 5px;
+            .navbar-brand {
+                span {
+                    margin-left: 5px;
+                    color: var(--Texto1);
+                    transition: 1s;
+                }
+            }
+            .navbar-collapse{
+                .navbar-nav{
+                    .nav-item{
+                        .nav-link{
+                            color: var(--Texto2);
+                            transition: 1s;
+                        }
+                    }
+                }
             }
         }
+
+        
 
         li {
             display: flex;
@@ -39,7 +52,6 @@
                     left: 0;
                     border-radius: 50px;
                     cursor: pointer;
-                    box-shadow: 0 0 0 0 #ff0000;
                 }
 
                 .toggle-label::before {

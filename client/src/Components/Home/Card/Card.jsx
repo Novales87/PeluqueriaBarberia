@@ -78,7 +78,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE NIÑO</h5>
-                                    <p className="card-text"><small className="text-muted">$3.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$3.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar calvo como el de One Punch Man</p>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTATE ESTA</h5>
-                                    <p className="card-text"><small className="text-muted">$9.000 - 65 min</small></p>
+                                    <p className="card-text"><small className="text">$3.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar pensando en como rellenar el texto de esta cosa para ver que tan responsive me sale esta cosa</p>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTATE ESTA</h5>
-                                    <p className="card-text"><small className="text-muted">$9.000 - 65 min</small></p>
+                                    <p className="card-text"><small className="text">$3.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar pensando en como rellenar el texto de esta cosa para ver que tan responsive me sale esta cosa</p>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -197,7 +197,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -224,7 +224,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>
@@ -237,7 +237,7 @@ export default function Card() {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">CORTE DE ADULTO</h5>
-                                    <p className="card-text"><small className="text-muted">$4.000 - 45 min</small></p>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
                                     <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
                                 </div>
                             </div>

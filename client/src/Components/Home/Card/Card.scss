@@ -16,12 +16,28 @@
             max-height: 590px;
             overflow-y: scroll;
             background-color: var(--Fondo1);
+            transition: 1s;
             .Cortes{
-                max-width:540px;
+                transition: 0.8s;
                 padding-left: 0;
                 padding-right: 0;
                 margin: 0 auto;
                 margin-top: 1rem;
+                background-color: var(--Fondo4);
+                .card-body{
+                    .card-title{
+                        color: var(--Texto3);
+                        transition: 1s;
+                    }
+                    .card-text{
+                        .text{
+                            color: var(--Texto2);
+                            transition: 1s;
+                        }
+                        color: var(--Texto1);
+                        transition: 1s;
+                    }
+                }
             }
         }
         .mostrar{
