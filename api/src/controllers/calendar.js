@@ -66,4 +66,40 @@ const getAllCalendars = async () => {
   return foundAllCalendars;
 };
 
-module.exports = { createCalendar, getCalendar, getAllCalendars };
+const reserveSchedule = async (req, res) => {
+  try {
+    const { calendarId, date, hora } = req.body;
+    const calendar = await Calendar.findOne({ where: { uuid: calendarId } });
+    if (!calendar) {
+      throw new Error("El calendario no existe");
+    }
+    const selectedDateSchedule = calendar.date.find((d) => d.date === date);
+    if (!selectedDateSchedule) {
+      throw new Error("El día seleccionado no está disponible");
+    }
+    const selectedTime = selectedDateSchedule.schedule.find(
+      (s) => s.hora === hora
+    );
+    if (!selectedTime) {
+      throw new Error("El horario seleccionado no está disponible");
+    }
+    if (selectedTime.reserved) {
+      throw new Error("El horario ya ha sido reservado");
+    }
+    selectedTime.reserved = true;
+    await calendar.save();
+    res.status(200).json({
+      message: "Horario reservado con éxito",
+      schedule: selectedTime,
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  createCalendar,
+  getCalendar,
+  getAllCalendars,
+  reserveSchedule,
+};
