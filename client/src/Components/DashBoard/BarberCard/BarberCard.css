@@ -33,3 +33,6 @@
 .barberCardDetail2 button {
     margin: 5px;
 }
+.Details .card{
+    animation: fadeIn 1s ease-in-out;
+}

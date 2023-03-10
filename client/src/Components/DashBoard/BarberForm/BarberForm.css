@@ -39,6 +39,7 @@
     max-width:600px;
     margin-bottom:  100px;
     border: 2px solid red;
+    animation: fadeIn 1s ease-in-out;
 }
 .Llename input{
     text-align: left;

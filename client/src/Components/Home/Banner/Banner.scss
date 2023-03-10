@@ -1,0 +1,53 @@
+.Contenedor-Carousel-Banner{
+    .carousel{
+        margin-top: 110px;
+        height: 500px;
+        max-height: 500px;
+        height: min-content;
+        transition: 0.5s;
+        .carousel-inner{
+            max-height: 500px;
+            height: 100%;
+            transition: 0.5s;
+            .carousel-item{
+                transition: 0.5s;
+                img{
+                    height: 500px;
+                    max-height: 500px;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1140px) {
+    .Contenedor-Carousel-Banner{
+        .carousel{
+            height: 400px;
+            .carousel-inner{
+                height: 400px;
+                .carousel-item{
+                    img{
+                        height: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 960px) {
+    .Contenedor-Carousel-Banner{
+        .carousel{
+            height: 300px;
+            .carousel-inner{
+                height: 300px;
+                .carousel-item{
+                    img{
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
