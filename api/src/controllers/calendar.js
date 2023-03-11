@@ -56,6 +56,7 @@ const createCalendar = async (id, start, final) => {
 
   return newCalendar;
 };
+
 const getCalendar = async (id) => {
   let foundCalendar = await Calendar.findByPk(id);
   return foundCalendar;
@@ -66,4 +67,55 @@ const getAllCalendars = async () => {
   return foundAllCalendars;
 };
 
-module.exports = { createCalendar, getCalendar, getAllCalendars };
+const putCalendar = async (id, dates, hours) => {
+
+  const registro = await Calendar.findByPk(id);
+  /* const registro = await foundBarber.getCalendars(); */
+  /* console.log(registro[0].date) */ // buscar el registro por ID
+  
+
+  const fecha = registro.date.find((fecha) => fecha.date === dates); 
+
+  console.log(fecha)
+
+  const hora = fecha.schedule.find((hora) => hora.hora === hours); 
+
+ 
+
+  
+  console.log(hora)
+  hora.reserved = true; 
+  await registro.save(); 
+};
+
+const updateDates = async () => {
+  const currentDate = new Date();
+  let calendars = await Calendar.findAll();
+
+  calendars.forEach(async calendar => {
+    let deletedDays = 0;
+    calendar.date.forEach((day, index) => {
+      const dayDate = new Date(day.date);
+      if (dayDate < currentDate) {
+        calendar.date.splice(index, 1);
+        deletedDays++;
+      } else if (dayDate > currentDate) {
+        return false; // break out of loop
+      }
+    });
+
+    for (let i = 0; i < deletedDays; i++) {
+      const lastDay = new Date(calendar.date[calendar.date.length - 1].date);
+      const newDay = new Date(lastDay.setDate(lastDay.getDate() + 1));
+      calendar.date.push({
+        date: newDay.toISOString(),
+        full: false,
+        schedule: [],
+      });
+    }
+
+    await calendar.save(); // Guardar el calendario modificado en la base de datos
+  });
+};
+
+module.exports = { createCalendar, getCalendar, getAllCalendars ,putCalendar , updateDates};
