@@ -1,9 +1,10 @@
 .contenedor-nav {
+    height: 110px;
     .navbar {
         top: 0;
         width: 100%;
         position: fixed;
-        z-index: 1;
+        z-index: 100;
         padding: 0;
         .container-fluid {
             transition: 1s;
