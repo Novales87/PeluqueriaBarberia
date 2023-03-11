@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteBarber } from "../../../Store/deleteBarberSlice";
+import { deleteCalendar } from "../../../Store/delteCalendarByIdSlice";
 import logo3 from "../../../images/Logo3.png";
 
 import "./BarberCard.css";
@@ -16,15 +17,25 @@ function BarberCard({ barber }) {
       "¿Estás seguro que deseas eliminar este barbero?"
     );
     if (confirmed) {
-      dispatch(deleteBarber(barber.id)).then(() => {
-        alert("Barbero eliminado correctamente");
-        setTimeout(() => navigate("/dashboard/barbers"), 2000);
-      });
+      if (barber.Calendars[0].id) {
+        dispatch(deleteCalendar(barber.Calendars[0].id)).then(() => {
+          dispatch(deleteBarber(barber.id)).then(() => {
+            alert("Barbero y Calendario eliminados correctamente");
+            setTimeout(() => navigate("/dashboard/barbers"), 1000);
+          });
+        });
+      } else {
+        dispatch(deleteBarber(barber.id)).then(() => {
+          alert("Barbero eliminado correctamente");
+          setTimeout(() => navigate("/dashboard/barbers"), 1000);
+        });
+      }
     }
   };
+  console.log(barber.Calendars[0].id);
 
   return (
-      <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
+    <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
   );
 }
 
