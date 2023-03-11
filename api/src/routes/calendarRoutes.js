@@ -27,7 +27,8 @@ router.put("/", async (req, res) => {
 })
 
 router.put("/update", async (req,res) => {
-
+    await updateDates()
+    res.status(200).send("succes2")
 })
 
 module.exports = router;
