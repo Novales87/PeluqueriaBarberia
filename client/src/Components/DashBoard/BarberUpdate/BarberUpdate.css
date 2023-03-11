@@ -1,5 +1,5 @@
 .ContainerUp{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     padding-top: 20px;
@@ -7,7 +7,7 @@
 }
 
 .barberUpBox{
-    width: 50vw;
+    max-width: 1150px;
     border-radius: 5px;
     display:flex;
     flex-direction: column;
@@ -17,7 +17,8 @@
     justify-content: center;
     background-color:rgba(255, 255, 255, 0.999);
     color: black;
-    
+    animation: fadeIn 1s ease-in-out;
+    margin: auto;
 }
 
 .Hours{
@@ -33,7 +34,8 @@
 
 .barberUpBox2{
     border-radius: 5px;
-    width: 85%;
+    width: 95%;
+    max-width: 975px;
     text-align: center;
     text-align: center;
     align-items: center;

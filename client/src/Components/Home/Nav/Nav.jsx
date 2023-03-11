@@ -10,7 +10,7 @@ export default function Nav() {
             <nav className="navbar navbar-expand-sm bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
-                        <img src={logo} alt="Bootstrap" width="40" height="40" />
+                        <img src={logo} alt="Bootstrap" width="100" height="100" />
                         <span>THE CUTMAN CO.</span>
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

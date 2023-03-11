@@ -7,7 +7,7 @@ export default function Footer() {
 
 
     return (
-        <footer className="bg-dark text-center text-white">
+        <footer className="text-center footer-container">
             <div className="container p-4">
                 <section className="mb-4">
                     <p>
@@ -24,12 +24,12 @@ export default function Footer() {
                                 <ul className="list-unstyled mb-0">
                                     {data.gitLink ?
                                         <li>
-                                            <a href={data.gitLink} className="text-white" target="_blank">GitHub</a>
+                                            <a href={data.gitLink} target="_blank">GitHub</a>
                                         </li>
                                         : null}
                                     {data.linkedin ?
                                         <li>
-                                            <a href={data.linkedin} className="text-white" target="_blank">Linkedin</a>
+                                            <a href={data.linkedin} target="_blank">Linkedin</a>
                                         </li>
                                         : null}
                                 </ul>

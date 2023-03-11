@@ -1,14 +1,41 @@
 .Card-Container{
     margin: 1.5%;
     .P1{
+        max-height: 642px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        overflow-y: scroll;
+        padding: 0;
+        border: none;
+        .card-body{
+            background-color: var(--Fondo1);
+            color: var(--Texto1);
+            transition: 1s;
+        }
     }
     .P2{
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        a{
-            color: darkgray;
+        background-color: var(--Fondo1);
+        .card-header{
+            transition: 0.2s;
+            background-color: var(--Fondo4);
+            .nav-item{
+                :hover{
+                    border-color: var(--Fondo4);
+                }
+                a{
+                    background-color: var(--Fondo2);
+                    color: var(--Texto2);
+                    transition: 1s;
+                }
+                .active{
+                    background-color: var(--Fondo1);
+                    color: var(--Texto1);
+                    border-color: var(--Fondo1);
+                    transition: 0.5s;
+                }
+            }
         }
         .informacion{
             display: none;
@@ -16,12 +43,28 @@
             max-height: 590px;
             overflow-y: scroll;
             background-color: var(--Fondo1);
+            transition: 1s;
             .Cortes{
-                max-width:540px;
+                transition: 0.8s;
                 padding-left: 0;
                 padding-right: 0;
                 margin: 0 auto;
                 margin-top: 1rem;
+                background-color: var(--Fondo4);
+                .card-body{
+                    .card-title{
+                        color: var(--Texto3);
+                        transition: 1s;
+                    }
+                    .card-text{
+                        .text{
+                            color: var(--Texto2);
+                            transition: 1s;
+                        }
+                        color: var(--Texto1);
+                        transition: 1s;
+                    }
+                }
             }
         }
         .mostrar{
