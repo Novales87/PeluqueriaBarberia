@@ -40,12 +40,13 @@ const BarberCalendar = ({ uuid }) => {
       </div>
 
       <div className="schedule-container">
-        <h2>Horarios disponibles</h2>
+        <h4>Horarios disponibles</h4>
         {getScheduleForSelectedDate().length > 0 && (
           <div className="schedule-container-hours">
             {getScheduleForSelectedDate().map((time) => (
               <div key={time.hora} className="hour-button">
                 <button
+                  className="btn btn-success btn-sm"
                   onClick={() =>
                     console.log(
                       `Horario ${
