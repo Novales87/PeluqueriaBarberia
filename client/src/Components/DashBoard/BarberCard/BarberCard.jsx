@@ -12,24 +12,41 @@ function BarberCard({ barber }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleDelete = () => {
+  // const handleDelete = () => {
+  //   const confirmed = window.confirm(
+  //     "¿Estás seguro que deseas eliminar este barbero?"
+  //   );
+  //   if (confirmed) {
+  //     if (barber.Calendars[0].id) {
+  //       dispatch(deleteCalendar(barber.Calendars[0].id)).then(() => {
+  //         dispatch(deleteBarber(barber.id)).then(() => {
+  //           alert("Barbero y Calendario eliminados correctamente");
+  //           setTimeout(() => navigate("/dashboard/barbers"), 1000);
+  //         });
+  //       });
+  //     } else {
+  //       dispatch(deleteBarber(barber.id)).then(() => {
+  //         alert("Barbero eliminado correctamente");
+  //         setTimeout(() => navigate("/dashboard/barbers"), 1000);
+  //       });
+  //     }
+  //   }
+  // };
+
+  const handleDelete = async () => {
     const confirmed = window.confirm(
       "¿Estás seguro que deseas eliminar este barbero?"
     );
     if (confirmed) {
-      if (barber.Calendars[0].id) {
-        dispatch(deleteCalendar(barber.Calendars[0].id)).then(() => {
-          dispatch(deleteBarber(barber.id)).then(() => {
-            alert("Barbero y Calendario eliminados correctamente");
-            setTimeout(() => navigate("/dashboard/barbers"), 1000);
-          });
-        });
+      if (barber.Calendars && barber.Calendars.length > 0) {
+        await dispatch(deleteCalendar(barber.Calendars[0].id));
+        await dispatch(deleteBarber(barber.id));
+        alert("Barbero y Calendario eliminados correctamente");
       } else {
-        dispatch(deleteBarber(barber.id)).then(() => {
-          alert("Barbero eliminado correctamente");
-          setTimeout(() => navigate("/dashboard/barbers"), 1000);
-        });
+        await dispatch(deleteBarber(barber.id));
+        alert("Barbero eliminado correctamente");
       }
+      setTimeout(() => navigate("/dashboard/barbers"), 1000);
     }
   };
 
