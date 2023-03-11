@@ -32,7 +32,6 @@ function BarberCard({ barber }) {
       }
     }
   };
-  console.log(barber.Calendars[0].id);
 
   return (
     <CardBarber barber={barber} logo={logo3} handleDelete={handleDelete} />
