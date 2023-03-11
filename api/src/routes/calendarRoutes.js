@@ -2,7 +2,7 @@ const {Router} = require("express");
 const { Calendar } = require("../db");
 const router = Router();
 
-const { createCalendar, getCalendar, getAllCalendars } = require("../controllers/calendar")
+const { createCalendar, getCalendar, getAllCalendars, putCalendar ,updateDates } = require("../controllers/calendar")
 
 router.post("/", async(req,res) => {
     const {id,start,final} = req.body
@@ -15,9 +15,20 @@ router.get("/:id", async(req,res) => {
     res.status(200).send(foundCalendar)
 })
 
-router.get("/all", async(_req,res) => {
+router.get("/all/all", async(_req,res) => {
     let allCalendars = await getAllCalendars();
     res.status(200).send(allCalendars)
+})
+
+router.put("/", async (req, res) => {
+    let {id , dates , hours} = req.body
+    await putCalendar(id, dates, hours)
+    res.status(200).send("succes")
+})
+
+router.put("/update", async (req,res) => {
+    await updateDates()
+    res.status(200).send("succes2")
 })
 
 module.exports = router;
