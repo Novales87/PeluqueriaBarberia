@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CardBarber({ barber, logo, handleDelete }) {
   return (
     
-      <div className="card" style={{ width: "28rem" }}>
+      <div className="card card-barber col-md-6">
         <img
           src={logo}
           className="rounded float-start img-fluid "
@@ -18,7 +18,7 @@ function CardBarber({ barber, logo, handleDelete }) {
           <h6>Estado: {barber.active ? "Activo" : "Inactivo"}</h6>
           <Link
             to={`/dashboard/update/${barber.id}`}
-            className="btn btn-primary btn-sm"
+            className="btn btn-sm"
             style={{ margin: "5px" }}
           >
             Editar
@@ -26,12 +26,12 @@ function CardBarber({ barber, logo, handleDelete }) {
           <button
             onClick={handleDelete}
             type="button"
-            className="btn btn-primary btn-sm"
+            className="btn btn-sm"
           >
             Eliminar
           </button>
         </div>
-        <Link to={`/dashboard/barbers`} className="btn btn-primary btn-sm">
+        <Link to={`/dashboard/barbers`} className="btn btn-sm">
           Volver
         </Link>
       </div>

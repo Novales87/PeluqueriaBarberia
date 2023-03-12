@@ -22,7 +22,7 @@ function BarberForm() {
   const navigate = useNavigate();
   
     useEffect(() => {
-        ColorChange()
+        ColorChange();
     }, [dispatch]);
 
   const handleInputChange = (event) => {
