@@ -1,4 +1,5 @@
-import "./BarberForm.scss";
+import "./BarberForm.css";
+import { useNavigate } from "react-router-dom";
 import logo3 from "../../../images/Logo3.png";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -18,6 +19,8 @@ function BarberForm() {
   const [response, setResponse] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
     useEffect(() => {
         ColorChange()
       }, [dispatch]);
@@ -26,6 +29,25 @@ function BarberForm() {
     const { name, value } = event.target;
     setBarber((prevState) => ({ ...prevState, [name]: value }));
   };
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   setResponse(""); // restablece la respuesta antes de enviar la solicitud
+
+  //   const resultAction = await dispatch(createBarber(barber));
+  //   if (resultAction.payload.error) {
+  //     setResponse(resultAction.payload.error);
+  //   } else {
+  //     setBarber({
+  //       name: "",
+  //       lastName: "",
+  //       startDate: "",
+  //       active: false,
+  //       phone: "",
+  //     });
+  //     setResponse("El barbero se creó correctamente.");
+  //   }
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -42,6 +64,12 @@ function BarberForm() {
         active: false,
         phone: "",
       });
+
+      // esperar 1 segundo antes de navegar a /dashboard/barbers
+      setTimeout(() => {
+        navigate("/dashboard/barbers");
+      }, 1000);
+
       setResponse("El barbero se creó correctamente.");
     }
   };

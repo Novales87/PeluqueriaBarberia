@@ -14,7 +14,7 @@ export const fetchCalendar = createAsyncThunk(
 const BarberCalendarSlice = createSlice({
   name: "calendar",
   initialState: {
-    calendar: [],
+    calendar: [{}],
     status: "idle",
     error: null,
   },
