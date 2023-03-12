@@ -1,9 +1,10 @@
-import "./BarberForm.css";
+import "./BarberForm.scss";
 import logo3 from "../../../images/Logo3.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createBarber } from "../../../Store/barberActions";
 import Nav from "../Nav/Nav";
+import { ColorChange } from "../../../Utils/Mode";
 
 function BarberForm() {
   const [barber, setBarber] = useState({
@@ -17,6 +18,9 @@ function BarberForm() {
   const [response, setResponse] = useState("");
 
   const dispatch = useDispatch();
+    useEffect(() => {
+        ColorChange()
+      }, [dispatch]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -45,156 +49,46 @@ function BarberForm() {
   return (
     <div className="ContainerForm">
       <Nav />
-
-      <div
-        style={{
-          color: "black",
-          backgroundColor: "white",
-          padding: "10px",
-          borderRadius: "8px",
-          marginTop: "30px",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-        className="holaqase"
-      >
-        <img
-          src={logo3}
-          alt="Logo"
-          style={{
-            width: "40%",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-        />
-
-        <h3>Crear Nuevo Barbero</h3>
-
-        <form onSubmit={handleSubmit} className="Llename">
+      <div className="Card-Create">
+        <img src={logo3} alt="Logo" />
+        <h2>Crear Nuevo Barbero</h2>
+        <form onSubmit={handleSubmit} className="Card-Create-Info">
           {response && <h5>{response}</h5>}
-
-          <div
-            className="mb-3"
-            style={{
-              width: "80%",
-              color: "black",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
+          <div className="mb-3 spanInfo">
             <label htmlFor="name" className="form-label">
               <h6>Nombre:</h6>
             </label>
-            <input
-              className="form-control"
-              type="text"
-              id="name"
-              name="name"
-              value={barber.name}
-              onChange={handleInputChange}
-            />
+            <input className="form-control" type="text" id="name" name="name" value={barber.name} onChange={handleInputChange} />
           </div>
 
-          <div
-            className="mb-3"
-            style={{
-              width: "80%",
-              color: "black",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
+          <div className="mb-3 spanInfo">
             <label htmlFor="lastName" className="form-label">
               <h6> Apellido:</h6>
             </label>
-            <input
-              className="form-control"
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={barber.lastName}
-              onChange={handleInputChange}
-            />
+            <input className="form-control" type="text" id="lastName" name="lastName" value={barber.lastName} onChange={handleInputChange} />
           </div>
 
-          <div
-            className="mb-3"
-            style={{
-              width: "80%",
-              color: "black",
-              margin: "auto",
-            }}
-          >
+          <div className="mb-3 spanInfo">
             <label htmlFor="phone" className="form-label">
               <h6>Teléfono:</h6>
             </label>
-            <input
-              className="form-control"
-              type="number"
-              id="phone"
-              name="phone"
-              value={barber.phone}
-              onChange={handleInputChange}
-            />
+            <input className="form-control" type="number" id="phone" name="phone" value={barber.phone} onChange={handleInputChange} />
           </div>
 
-          <div
-            style={{
-              width: "80%",
-              color: "black",
-              margin: "auto",
-            }}
-          >
-            <label
-              htmlFor="startDate"
-              style={{
-                marginRight: "10px",
-                padding: "10px",
-              }}
-            >
+          <div className="spanInfo">
+            <label htmlFor="startDate">
               <h6>Fecha de inicio:</h6>
             </label>
-            <input
-              type="date"
-              id="startDate"
-              name="startDate"
-              value={barber.startDate}
-              onChange={handleInputChange}
-            />
+            <input type="date" id="startDate" name="startDate" value={barber.startDate} onChange={handleInputChange} />
           </div>
-
-          <div
-            className="mb-3 form-check"
-            style={{
-              width: "30%",
-              color: "black",
-              padding: "10px",
-              margin: "auto",
-            }}
-          >
-            <label
-              htmlFor="active"
-              style={{
-                marginRight: "10px",
-              }}
-            >
+          <div className="form-check">
+            <label htmlFor="active">
               <h6> Activo:</h6>
             </label>
-            <input
-              type="checkbox"
-              id="active"
-              name="active"
-              checked={barber.active}
-              onChange={() =>
-                setBarber((prevState) => ({
-                  ...prevState,
-                  active: !prevState.active,
-                }))
-              }
-            />
+            <input type="checkbox" id="active" name="active" checked={barber.active} onChange={() => setBarber((prevState) => ({ ...prevState, active: !prevState.active, }))} />
+            <span class="checkmark"></span>
           </div>
-
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="GuardarTodo">
             Guardar
           </button>
         </form>

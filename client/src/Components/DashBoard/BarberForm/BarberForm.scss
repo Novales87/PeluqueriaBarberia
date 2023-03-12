@@ -1,0 +1,106 @@
+ /* body{
+    background-image: url(../../../images/foto9.jpeg);
+    background-size: cover;
+} */
+.ContainerForm{
+    height: 100%;
+    background-color: var(--Fondo3);
+    transition: 1s;
+    .Card-Create{
+        max-width:600px;
+        padding: 10px;
+        border-radius: 8px;
+        margin: auto;
+        margin-top: 30px;
+        animation: fadeIn 1s ease-in-out;
+        transition: 1s;
+        border: 2px solid var(--Fondo5);
+        color: var(--Texto5);
+        background-color: var(--Fondo1);
+        img{    
+            width: 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .Card-Create-Info{
+            .spanInfo{
+                width: 80%;
+                margin: auto;
+                color: var(--Texto5);
+                label{
+                    padding: 10px;
+                }
+                .form-control{
+                    transition: 1s;
+                    border: solid var(--Fondo5);
+                    background-color: var(--Fondo2);
+                    color: var(--Texto1);
+                    &:focus{
+                        box-shadow:  0 0 5pt 2pt var(--Fondo4);
+                    }
+                }
+                #startDate{
+                    transition: 1s;
+                    background-color: var(--Fondo3);
+                    color: var(--Texto1);
+                    border-color: var(--Fondo5);
+                    &::-webkit-calendar-picker-indicator{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .form-check{
+                width: 30%;
+                padding: 10px;
+                margin: auto;
+                color: var(--Texto5);
+                label{
+                    margin: 10px;
+                }
+                input{
+                    cursor: pointer;
+                }
+            }
+            .GuardarTodo{
+                border-radius: 10px;
+                max-width: 300px;
+                width: 80%;
+                transition: 1s;
+                background-color: var(--Fondo5);
+                color: var(--Texto1);
+            }
+        }
+    }
+}
+
+.BarberFormCont{
+    display:flex;
+    flex-direction: column;
+    height: 550px;
+    width: 350px;
+    background-color:rgba(165, 42, 42, 0.448);
+    border: 5px solid rgba(0, 0, 0, 0.273);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 1.2em;
+    color:white;
+}
+
+.BarberFormCont img{
+    width: 90%;
+    height: 30%;
+    margin-bottom: 10%;
+}
+
+.BarberFormCont input {
+    color: black;
+    margin: 5px;
+}
+
+.BarberFormCont button {
+    margin: 10px;
+}
+

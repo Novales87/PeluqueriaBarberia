@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "../../../images/logo.jpeg";
 import { Link } from "react-router-dom";
+import { toggleDarkLight } from "../../../Utils/Mode";
 function Nav() {
   return (
     <nav className="navbar  navbar-expand-sm navbar-dark bg-dark ">
       <div className="container-fluid">
-        <img src={logo} className="img-fluid" style={{ width: "100px" }} />
+        <img src={logo} className="img-fluid" style={{ width: "100px" }} onClick={(e)=>toggleDarkLight(e)}/>
         <Link className="navbar-brand" href="#"></Link>
         <button
           className="navbar-toggler"
