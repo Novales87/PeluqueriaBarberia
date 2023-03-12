@@ -13,12 +13,14 @@ function CardBarberList({ barber, logo }) {
               />
               <h4 className="card-title">{barber.name}</h4>
               <h5 className="card-title">{barber.lastName}</h5>
-              <p className="card-text">
-                {barber.active ? "Activo" : "Inactivo"}
+              <p className='card-text'>
+                {barber.active ? 
+                  <p className="Activado">Activo</p>
+                  : <p className="Inactivo">Inactivo</p>}
               </p>
               <Link
                 to={`/dashboard/detail/${barber.id}`}
-                className="btn btn-primary"
+                className="btn"
               >
                 Detalle
               </Link>

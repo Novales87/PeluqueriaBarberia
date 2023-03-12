@@ -1,0 +1,31 @@
+.BarberList{
+    padding: 20px;
+    padding-top: 30px;
+    width: 100%;
+    margin: 0;
+    background-color: var(--Fondo3);
+    transition: 1s;
+    .Contenedor-cardL{
+        padding: 10px;
+        animation: fadeIn 1s ease-in-out;
+        .card{
+            margin: 2%;
+            background-color: var(--Fondo1);
+            color: var(--Texto1);
+            transition: 1s;
+            .Activado{
+                color: var(--Aprobado);
+            }
+            .Inactivo{
+                color: var(--Denegado);
+            }
+        }
+        .btn {
+            margin-bottom: 10px;
+            width: 80%;
+            background-color: var(--Fondo5);
+            color: var(--Texto1);
+            transition: 1s;
+        }
+    }
+}

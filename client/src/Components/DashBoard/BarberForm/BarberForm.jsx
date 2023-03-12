@@ -23,7 +23,7 @@ function BarberForm() {
   
     useEffect(() => {
         ColorChange()
-      }, [dispatch]);
+    }, [dispatch]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -114,7 +114,6 @@ function BarberForm() {
               <h6> Activo:</h6>
             </label>
             <input type="checkbox" id="active" name="active" checked={barber.active} onChange={() => setBarber((prevState) => ({ ...prevState, active: !prevState.active, }))} />
-            <span class="checkmark"></span>
           </div>
           <button type="submit" className="GuardarTodo">
             Guardar
