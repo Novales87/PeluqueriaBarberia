@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import "./BarberCalendar.css";
+import "./BarberCalendar.scss";
 import { fetchCalendar } from "../../../Store/BarberCalendarSlice";
 
 const BarberCalendar = ({ uuid }) => {
@@ -34,23 +34,22 @@ const BarberCalendar = ({ uuid }) => {
   };
 
   return (
-    <div className="Container-calendar">
-      <div className="calendar-container">
+    <div className="Container-calendar row col-md-6">
+      <div className="calendar-container col-md-12">
         <Calendar onClickDay={handleDateClick} />
       </div>
 
-      <div className="schedule-container">
+      <div className="schedule-container col-md-12">
         <h4>Horarios disponibles</h4>
         {getScheduleForSelectedDate().length > 0 && (
           <div className="schedule-container-hours">
             {getScheduleForSelectedDate().map((time) => (
               <div key={time.hora} className="hour-button">
                 <button
-                  className="btn btn-success btn-sm"
+                  className="botones"
                   onClick={() =>
                     console.log(
-                      `Horario ${
-                        time.hora
+                      `Horario ${time.hora
                       } seleccionado para la fecha ${selectedDate
                         .toISOString()
                         .substring(0, 10)}`

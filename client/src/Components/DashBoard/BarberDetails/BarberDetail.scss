@@ -1,0 +1,15 @@
+.Container-Details{
+    width: 100%;
+    height: 100%;
+    background-color: var(--Fondo3);
+    transition: 1s;
+    .Details{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

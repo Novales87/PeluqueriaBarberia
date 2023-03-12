@@ -5,7 +5,7 @@ import { deleteBarber } from "../../../Store/deleteBarberSlice";
 import { deleteCalendar } from "../../../Store/delteCalendarByIdSlice";
 import logo3 from "../../../images/Logo3.png";
 
-import "./BarberCard.css";
+import "./BarberCard.scss";
 import CardBarber from "./CardBarber";
 
 function BarberCard({ barber }) {

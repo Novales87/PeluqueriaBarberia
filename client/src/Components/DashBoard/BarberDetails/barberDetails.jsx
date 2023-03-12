@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./BarberDetail.css";
+import "./BarberDetail.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
@@ -7,6 +7,7 @@ import Loading from "../../Loading/Loading";
 import BarberCard from "../BarberCard/BarberCard";
 import Navbar from "../Nav/Nav";
 import BarberCalendar from "../calendar/BarberCalendar";
+import { ColorChange } from "../../../Utils/Mode";
 
 function BarberDetails() {
   const { id } = useParams();
@@ -18,6 +19,7 @@ function BarberDetails() {
 
   useEffect(() => {
     dispatch(fetchBarberById(id));
+    ColorChange();
   }, [dispatch, id]);
 
   useEffect(() => {
@@ -36,9 +38,9 @@ function BarberDetails() {
   }
 
   return (
-    <div>
+    <div className="Container-Details">
       <Navbar />
-      <div className="Details">
+      <div className="Details row">
         {barber && <BarberCard barber={barber} />}
 
         {calendars && calendars.length > 0 && (

@@ -1,0 +1,88 @@
+.Container-calendar{
+    padding: 0;
+    min-height: 590px;
+    margin: 30px;
+    .calendar-container{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        background-color: var(--Fondo1);
+        transition: 1s;
+        .react-calendar{
+            margin: 10px auto;
+            background-color: var(--Fondo3);
+            color: var(--Texto4);
+            transition: 1s;
+            .react-calendar__navigation{
+                button{
+                    color: var(--Texto1);
+                    transition: 1s;
+                }
+            }
+            .react-calendar__viewContainer{
+                .react-calendar__month-view{
+                    .react-calendar__month-view__days{
+                        .react-calendar__month-view__days__day--neighboringMonth{
+                            color: var(--Texto2);
+                            transition: 1s;
+                        }
+                        .react-calendar__tile--active{
+                            color: var(--Texto3);
+                            background-color: var(--Fondo5);
+                            transition: 0.5s;
+                        }
+                        .react-calendar__month-view__days__day{
+                            &:not(.react-calendar__month-view__days__day--neighboringMonth,.react-calendar__tile--active,.react-calendar__month-view__days__day--weekend){
+                                color: var(--Texto1);
+                                transition: 1s;
+                            }
+                        }
+                        .react-calendar__month-view__days__day--weekend{
+                            &:not(.react-calendar__month-view__days__day--neighboringMonth){
+                                color: var(--Denegado);
+                                transition: 1s;
+                            }
+                        }
+                        .react-calendar__tile--now{
+                            background-color: var(--Fondo1);
+                            transition: 1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .schedule-container{
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+        background-color: var(--Fondo5);
+        color: var(--Texto1);
+        transition: 1s;
+        .schedule-container-hours{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .hour-button{
+                margin: 5px;
+                border-radius: 20px;
+                .botones{
+                    border-radius: 20px;
+                    background-color:  var(--Fondo1);
+                    color: var(--Texto1);
+                    transition: 1s;
+                    &:hover{
+                        border-color: var(--Aprobado);
+                        box-shadow: inset 0px 0px 10px var(--Aprobado);
+                        transition: 1s;
+                    }
+                }
+            }
+        }
+    }
+}

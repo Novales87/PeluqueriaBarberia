@@ -1,3 +1,31 @@
+.card-barber{
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+    background-color: var(--Fondo1);
+    color: var(--Texto1);
+    transition: 1s;
+    img{
+        margin: 10px;
+    }
+    .card-body .btn{
+        width: 45%;
+        background-color: var(--Fondo5);
+        color: var(--Texto1);
+        transition: 1s;
+    }
+    >.btn{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        background-color: var(--Fondo5);
+        color: var(--Texto1);
+        transition: 1s;
+    }
+}
+
+
+
 .barberCardDetail{
     display:flex;
     flex-direction: column;
@@ -11,7 +39,6 @@
     justify-content: center;
     box-sizing: border-box;
     color:aliceblue;
-
 }
 
 .barberCardDetail img{
@@ -32,7 +59,4 @@
 
 .barberCardDetail2 button {
     margin: 5px;
-}
-.Details .card{
-    animation: fadeIn 1s ease-in-out;
 }
