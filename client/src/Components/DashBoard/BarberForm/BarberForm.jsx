@@ -1,4 +1,4 @@
-import "./BarberForm.css";
+import "./BarberForm.scss";
 import { useNavigate } from "react-router-dom";
 import logo3 from "../../../images/Logo3.png";
 import { useEffect, useState } from "react";
