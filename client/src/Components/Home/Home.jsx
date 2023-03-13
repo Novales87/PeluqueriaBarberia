@@ -6,12 +6,17 @@ import Card from "./Card/Card";
 import Contacts from "./Contacts/Contacts";
 import Footer from "./Footer/Footer";
 import { ColorChange } from "../../Utils/Mode";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBarbers } from "../../Store/fetchBarbersSlice";
 
 export default function Home() {
     const dispatch = useDispatch();
+    const barbers = useSelector((state) => state.fetchBarbers.barbers);
+    console.log(barbers)
+
     useEffect(() => {
-        ColorChange()
+        dispatch(fetchBarbers());
+        ColorChange();
       }, [dispatch]);
     return (
         <div className="Home">
@@ -20,7 +25,7 @@ export default function Home() {
                 <Banner />
                 <Card />
             </div>
-            <Contacts />
+            <Contacts barbers={barbers}/>
             <Footer />
         </div>
     );
