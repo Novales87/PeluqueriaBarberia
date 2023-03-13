@@ -4,10 +4,11 @@ import { useParams, Link } from "react-router-dom";
 import { updateBarber } from "../../../Store/updateBarberSlice";
 import { fetchBarberById } from "../../../Store/fetchBarberByIdSlice";
 import Loading from "../../Loading/Loading";
-import "./BarberUpdate.css";
+import "./BarberUpdate.scss";
 import logo3 from "../../../images/Logo3.png";
 import Navbar from "../Nav/Nav";
 import AddCalendar from "./AddCalendar";
+import { ColorChange } from "../../../Utils/Mode";
 
 function BarberUpdate() {
   const { id } = useParams();
@@ -20,6 +21,10 @@ function BarberUpdate() {
   const [startDate, setStartDate] = useState("");
   const [active, setActive] = useState(false);
   const [operationStatus, setOperationStatus] = useState("");
+
+  useEffect(() => {
+    ColorChange();
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchBarberById(id));
@@ -53,7 +58,7 @@ function BarberUpdate() {
   };
 
   return (
-    <>
+    <div className="Container-Update-Barber">
       <Navbar />
       <div className="ContainerUp">
         <div className="barberUpBox">
@@ -147,7 +152,7 @@ function BarberUpdate() {
                       <h6>Fecha de inicio:</h6>
                     </label>
                     <input
-                      className="form-control"
+                      className="form-control cambiemosIcon"
                       type="date"
                       id="startDate"
                       value={startDate}
@@ -189,10 +194,10 @@ function BarberUpdate() {
                     Guardar
                   </button>
                   {operationStatus === "success" && (
-                    <p>¡Actualización exitosa!</p>
+                    <p className="success">¡Actualización exitosa!</p>
                   )}
                   {operationStatus === "failed" && (
-                    <p>Hubo un error al actualizar los datos.</p>
+                    <p className="failed">Hubo un error al actualizar los datos.</p>
                   )}
                 </form>
                 <AddCalendar barberId={barber.id} />
@@ -204,7 +209,7 @@ function BarberUpdate() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

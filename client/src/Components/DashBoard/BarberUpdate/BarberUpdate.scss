@@ -1,0 +1,95 @@
+.Container-Update-Barber {
+    background-color: var(--Fondo3);
+    transition: 1s;
+    .ContainerUp {
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        .barberUpBox {
+            max-width: 1150px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            animation: fadeIn 1s ease-in-out;
+            border: 4px solid var(--Fondo5);
+            background-color: var(--Fondo1);
+            color: var(--Texto1);
+            transition: 1s;
+            .barberUpBox2 {
+                border-radius: 15px;
+                width: 95%;
+                max-width: 975px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+                border: 3px solid var(--Fondo5);
+                background-color: var(--Fondo2);
+                transition: 1s;
+                input {
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 15px;
+                    margin-right: 15px;
+                    border-radius: 10px;
+                    border: 2px solid var(--Fondo4);
+                    background-color: var(--Fondo5);
+                    color: var(--Texto1);
+                    transition: 1s;
+                }
+
+                button {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    color: var(--Texto3);
+                    background-color: var(--Fondo4);
+                    border-color: var(--Fondo5);
+                    width: 80%;
+                    transition: 1s;
+                }
+
+                label {
+                    margin-left: 10px;
+                    margin-right: 5px;
+                    color: var(--Texto5);
+                    transition: 1s;
+                }
+                .success{
+                    color: var(--Aprobado);
+                }
+                .failed{
+                    color: var(--Denegado);;
+                }
+                .alert-success{
+                    border-radius: 0;
+                    height: 30px;
+                    padding: 0;
+                    color: var(--Aprobado);
+                }
+                .alert-danger{
+                    border-radius: 0;
+                    height: 30px;
+                    padding: 0;
+                    color: var(--Denegado);
+                }
+                .Hours {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    justify-content: center;
+                    width: 95%;
+                    margin: auto;
+                    border-radius: 5px;
+                    border: 2px solid var(--Fondo5);
+                    transition: 1s;
+                }
+            }
+        }
+    }
+}
