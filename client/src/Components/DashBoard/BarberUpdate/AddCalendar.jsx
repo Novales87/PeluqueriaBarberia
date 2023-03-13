@@ -30,7 +30,7 @@ function AddCalendar({ barberId }) {
       setMessage({ type: "success", text: "Horario asignado exitosamente." });
     } else {
       setMessage({
-        type: "error",
+        type: "danger",
         text: "Debe ingresar la hora de inicio y fin del horario.",
       });
     }
@@ -45,28 +45,33 @@ function AddCalendar({ barberId }) {
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <div className="Hours">
-          <label htmlFor="horaInicio">
-            <h6>inicio:</h6>
-          </label>
-          <input
-            type="time"
-            id="horaInicio"
-            name="horaInicio"
-            value={start}
-            onChange={(e) => setStart(e.target.value)}
-          />
-
-          <label htmlFor="horaFin">
-            <h6>fin:</h6>
-          </label>
-          <input
-            type="time"
-            id="horaFin"
-            name="horaFin"
-            value={final}
-            onChange={(e) => setFinal(e.target.value)}
-          />
+        <div className="Hours row">
+          <div className="col-md-6">
+            <label htmlFor="horaInicio">
+              <h6>inicio:</h6>
+            </label>
+            <input
+              className="cambiemosIcon"
+              type="time"
+              id="horaInicio"
+              name="horaInicio"
+              value={start}
+              onChange={(e) => setStart(e.target.value)}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="horaFin">
+              <h6>fin:</h6>
+            </label>
+            <input
+              className="cambiemosIcon"
+              type="time"
+              id="horaFin"
+              name="horaFin"
+              value={final}
+              onChange={(e) => setFinal(e.target.value)}
+            />
+          </div>
 
           {!allowedMinutes.includes(start.slice(-2)) && (
             <p className="text-danger">

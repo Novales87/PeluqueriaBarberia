@@ -2,6 +2,7 @@
     padding: 0;
     min-height: 590px;
     margin: 30px;
+    animation: fadeIn 1s ease-in-out;
     .calendar-container{
         display: flex;
         align-items: center;
@@ -79,7 +80,7 @@
                     &:hover{
                         border-color: var(--Aprobado);
                         box-shadow: inset 0px 0px 10px var(--Aprobado);
-                        transition: 1s;
+                        transition: 0.2s;
                     }
                 }
             }
