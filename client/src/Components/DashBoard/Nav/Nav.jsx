@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../../images/logo.jpeg";
 import { Link } from "react-router-dom";
 import { toggleDarkLight } from "../../../Utils/Mode";
+import "./Nav.scss";
 function Nav() {
   return (
     <nav className="navbar  navbar-expand-sm navbar-dark bg-dark ">

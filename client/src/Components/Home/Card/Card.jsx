@@ -113,10 +113,63 @@ export default function Card() {
                         </div>
                     </div>
                 </div>
-                <div className="card-body informacion">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                <div className="card-body row informacion">
+                <div className="card Cortes col-md-5">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src={logo} className="img-fluid rounded-start" alt="..." />
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">CORTE DE ADULTO</h5>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
+                                    <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card Cortes col-md-5">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src={logo} className="img-fluid rounded-start" alt="..." />
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">CORTE DE ADULTO</h5>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
+                                    <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card Cortes col-md-5">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src={logo} className="img-fluid rounded-start" alt="..." />
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">CORTE DE ADULTO</h5>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
+                                    <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card Cortes col-md-5">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src={logo} className="img-fluid rounded-start" alt="..." />
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">CORTE DE ADULTO</h5>
+                                    <p className="card-text"><small className="text">$4.000 - 45 min</small></p>
+                                    <p className="card-text">Con este corte te vamos a dejar como pie grande</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="card-body row informacion">
                     <div className="card Cortes col-md-5">
@@ -216,7 +269,8 @@ export default function Card() {
                                 </div>
                             </div>
                         </div>
-                    </div><div className="card Cortes col-md-5">
+                    </div>
+                    <div className="card Cortes col-md-5">
                         <div className="row g-0">
                             <div className="col-md-4">
                                 <img src={logo} className="img-fluid rounded-start" alt="..." />
